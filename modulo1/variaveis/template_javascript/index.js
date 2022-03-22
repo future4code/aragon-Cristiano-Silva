@@ -1,4 +1,6 @@
-/*Exercicio1*/
+
+
+// Exercicio1 
 let primeiroNome
 let idade
 console.log(typeof primeiroNome)
@@ -15,7 +17,7 @@ console.log(typeof idade)
 
 console.log("Olá, meu nome é,",primeiroNome,"tenho ",idade,"anos.")
 
-/*Exercicio2 */
+// Exercicio2 
 
 let nascidoUf = prompt("Você nasceu no estado de Pernambuco?")
 let sobreNome = prompt("Seu sobrenome é Souza?")
@@ -31,7 +33,7 @@ console.log(respostaDois)
 console.log(respostaTRES)
 
 
-/*Exercicio3*/
+// Exercicio3
 let a = 10
 let b = 25
 let c 
