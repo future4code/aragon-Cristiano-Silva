@@ -66,7 +66,8 @@ let tarefa2 = prompt("Digite sua segunda tarefa a ser realizada:")
 let tarefa3 = prompt("Digite sua terceira tarefa a ser realizada:")
 tarefas = [tarefa1,tarefa2,tarefa3]
 console.log(tarefas)
-let indice = prompt("Digite qual tarefa já foi realizada: 0,1 ou 2")
-tarefas.splice(indice)
+let indice = Number(prompt("Digite qual tarefa já foi realizada: 0,1 ou 2"))
+tarefas.splice(indice,1)
 console.log(indice,tarefas)
+
 
