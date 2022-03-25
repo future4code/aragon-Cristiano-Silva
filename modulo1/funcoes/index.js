@@ -134,3 +134,16 @@ function operadores (soma,subtracao,multiplicacao,divisao) {
 }
 operadores(soma,subtracao,multiplicacao,divisao)
 
+//DESAFIO FUNCOES
+
+//1.a 
+
+const nomeDoUsuario = prompt("Informe o seu Usuario:")
+
+const usuario = function (){
+    const imprimir = usuario
+    console.log(nomeDoUsuario)
+}
+usuario()
+
+
