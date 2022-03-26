@@ -118,13 +118,12 @@ function retornaUltimoElemento(array) {
 // EXERCÍCIO 11
 function trocaPrimeiroEUltimo(array) {
   // implemente sua lógica aqui
-  const frutas = ["maca", "laranja", "uva"]
+  let ultimoElemento = array.pop() 
+  let primeiroElemento = array[0]
+  array.push(primeiroElemento)
+  array[0] = ultimoElemento
+
   
-  frutas.pop()               // remove o ultimo
- //   frutas.splice([])             //adiciona e remove arrays
-  frutas.unshift(["uva"])           // adiciona no inicio
- // frutas.push()              // adiciona no final 
-  console.log(frutas)
   return array
 
 }
@@ -132,10 +131,11 @@ function trocaPrimeiroEUltimo(array) {
 // EXERCÍCIO 12
 function checaIgualdadeDesconsiderandoCase(string1, string2) {
   // implemente sua lógica aqui
-  string1: "ola"
-  string2: "OlA"
+  let maiusc1 =  string1.toUpperCase()
+  let maiusc2 =  string2.toUpperCase()
+  let resutlado    =  maiusc1 === maiusc2
   
-  return string1 == string2
+  return resutlado
 }
 
 // EXERCÍCIO 13
