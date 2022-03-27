@@ -141,13 +141,35 @@ function checaIgualdadeDesconsiderandoCase(string1, string2) {
 // EXERCÍCIO 13
 function checaRenovacaoRG() {
   // implemente sua lógica aqui
+  let anoAtual = Number(prompt("Digite o ano atual:"))
+  let anoDeNascimento = Number(prompt("Digite o ano de nascimento:"))
+  let anoCarteiraRg = Number(prompt("Digite o ano da sua carteira de identidade:"))
+
+  let idade = anoAtual - anoDeNascimento
+  let anoRg = anoAtual - anoCarteiraRg
+
+  let comp1 = idade <= 20 && anoRg >= 5
+  let comp2 = idade > 20 && idade <= 50 && anoRg >=10
+  let comp3 = idade > 50 && anoRg >= 15
+  let renovar = comp1 || comp2 || comp3
+  console.log(renovar)
+  return renovar  
+
+
 
 }
 
 // EXERCÍCIO 14
 function checaAnoBissexto(ano) {
   // implemente sua lógica aqui
+  const multiplo400 = ano % 400 
+  const multiplo4   = ano % 4
+  const diferente   = ano % 100
 
+  const condicao = multiplo400 == 0 || multiplo4 == 0 && diferente !=0
+  console.log(condicao)
+  return condicao
+  
 }
 
 // EXERCÍCIO 15
