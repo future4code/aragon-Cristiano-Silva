@@ -47,14 +47,9 @@ const dadosPessoais1 = {
     }
 
     function dadosGerais (dadosPessoais1, dadosPessoais2){
-        const new1 = [dadosPessoais1]
-        const new2 = [dadosPessoais2]
-
-        console.log(dadosPessoais1.nome, dadosPessoais1.nome.length, dadosPessoais1.idade, dadosPessoais1.profissao, dadosPessoais1.profissao.length)
-        console.log(dadosPessoais2.nome, dadosPessoais2.nome.length, dadosPessoais2.idade, dadosPessoais2.profissao, dadosPessoais2.profissao.length)
-
-        return  new1, new2
-    
+        console.log([dadosPessoais1.nome, dadosPessoais1.nome.length, dadosPessoais1.idade, dadosPessoais1.profissao, dadosPessoais1.profissao.length])
+        console.log([dadosPessoais2.nome, dadosPessoais2.nome.length, dadosPessoais2.idade, dadosPessoais2.profissao, dadosPessoais2.profissao.length])     
+        return dadosPessoais1, dadosPessoais2   
        
 
 }
