@@ -100,3 +100,10 @@ function dadosDeUsuario (){
     console.log({nome,profissao,idade})
 }
 dadosDeUsuario()
+
+// 2.
+
+function filmes (nome,anoDeLancamento){
+    
+
+}
