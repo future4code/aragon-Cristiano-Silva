@@ -54,3 +54,31 @@ const dadosPessoais1 = {
 
 }
 dadosGerais(dadosPessoais1,dadosPessoais2)
+
+
+// 3.
+
+const carrinho =[]
+
+const fruta1 = {
+    nome: "maça",
+    disponibilidade : true
+}
+
+const fruta2 = {
+    nome: "pera",
+    disponibilidade: true
+}
+
+const fruta3 = {
+    nome: "limao",
+    disponibilidade: true
+}
+
+function sacolaoDeFrutas (fruta1,fruta2,fruta3){
+    const carrinho = [fruta1,fruta2,fruta3]
+  
+    console.log(carrinho)
+    
+}
+sacolaoDeFrutas(fruta1,fruta2,fruta3)
