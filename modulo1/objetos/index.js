@@ -82,3 +82,21 @@ function sacolaoDeFrutas (fruta1,fruta2,fruta3){
     
 }
 sacolaoDeFrutas(fruta1,fruta2,fruta3)
+
+
+// Desafio 
+// 1.
+
+function dadosDeUsuario (){
+    const nome = prompt("Digite aqui o seu nome:")
+    const idade = prompt("Digite aqui a sua idade:")
+    const profissao = prompt("Digite a sua profissão:")
+
+    const resultado = {
+        nome: nome,
+        idade:idade,
+        profissao:profissao
+    }
+    console.log({nome,profissao,idade})
+}
+dadosDeUsuario()
