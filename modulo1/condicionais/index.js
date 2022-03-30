@@ -80,3 +80,53 @@ if (genero === "fantasia" && preco <= 15){
 } else {
     console.log ("Escolha outro Filme")
 }
+
+
+// DESAFIO
+//1
+
+const genero1 = prompt("Qual o gênero do filme ira assistir?")
+const preco1  = Number(prompt("Qual o valor do ingresso?"))
+const lanchinho = prompt("Qual lanche de preferencia irá querer, temos algumas opções: pipoca, chocolate, doces?")
+
+if (genero1 === "fantasia" && preco1 <= 15){
+    console.log("Bom Filme!")
+    console.log(`Aproveite seu lanche, ${lanchinho}`)
+} else {
+    console.log ("Escolha outro Filme")
+}
+
+
+//2. incompleto faltando concluir
+
+const nomeCompleto = prompt("Informe seu nome completo:")
+const tipoDoJogo   = prompt("Informe o tipo de jogo IN ou DO")
+const etapaDoJogo  = prompt("Informe a etapa do jogo que prefere assistir SF, DT ou FI")
+const categoria    = Number(prompt("Qual a categoria pode ser 1,2,3 e 4"))
+const quantidadeDeIngressos = Number(prompt("Quantos ingressos deseja?"))
+
+
+if (tipoDoJogo === "DO"){
+    console.log("---Dados da Compra---")
+    console.log("Nome do CLiente:",nomeCompleto)
+    console.log("Tipo do Jogo:",tipoDoJogo)
+    console.log("Etapa do Jogo:",etapaDoJogo)
+    console.log("Categoria:",categoria)
+    console.log("Quantidade de Ingressos:",quantidadeDeIngressos)
+    console.log("---Valores---")
+    console.log("Valor do ingresso:")
+    console.log("Valor Total:")
+} else if ( tipoDoJogo === "IN"){
+    console.log("---Dados da Compra---")
+    console.log("Nome do CLiente:",nomeCompleto)
+    console.log("Tipo do Jogo:",tipoDoJogo)
+    console.log("Etapa do Jogo:",etapaDoJogo)
+    console.log("Categoria:",categoria)
+    console.log("Quantidade de Ingressos:",quantidadeDeIngressos)
+    console.log("---Valores---")
+    console.log("Valor do ingresso:")
+    console.log("Valor Total:")
+}
+
+
+    
