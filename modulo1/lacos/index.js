@@ -6,7 +6,7 @@
 
 // Exercicios de escrita de código
 //1.
-/*
+
 
 let quantidadeDeBichinhos = Number(prompt("Quantos bichinhos você tem:"))
 let listaBichinhos = []
@@ -48,18 +48,18 @@ function imprimir (){
     }
 }
 imprimir()
-*/
+
 
 //c
-let arrayOriginal2 = [80,30,130,40,60,21,70,120,90,103,110,55]
-   
-function imprimir (){
-    let novaArray = []
-    for(let num of arrayOriginal2){
-        arrayOriginal2.push(novaArray)
-        console.log(num % 1)
-        console.log(novaArray % 2)
-        
+let arrayOriginal2 = [80,33,130,40,60,21,70,120,90,103,110,55]
+let novaArray = []
+
+    
+for(let i =0; i < arrayOriginal2.length; i++){
+    if (arrayOriginal2[i] % 2 ==0){
+    novaArray.push(arrayOriginal2)
+            
     }
+    
 }
-imprimir()
+console.log(novaArray)
