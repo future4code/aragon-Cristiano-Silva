@@ -8,7 +8,6 @@
 //1.
 
 
-
 let quantidadeDeBichinhos = Number(prompt("Quantos bichinhos você tem:"))
 let listaBichinhos = []
 
@@ -29,8 +28,11 @@ if (quantidadeDeBichinhos === 0 ){
 //A.
 
 let arrayOriginal = [2,4,5,44,54,22,12]
+   
 function imprimir (){
-    console.log(arrayOriginal)
+     for(let num of arrayOriginal){
+        console.log(num)
+    }
 }
 imprimir()
 
