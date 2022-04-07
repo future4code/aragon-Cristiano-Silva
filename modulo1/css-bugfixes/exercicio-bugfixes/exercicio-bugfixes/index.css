@@ -21,8 +21,11 @@ input {
     width: 500px;
 }
 
-button:focus {
-    color: white;
+
+
+button:hover {
+    color: rgb(255, 254, 254);
+    background-color: #c44f00;
     
 }
 
@@ -119,6 +122,8 @@ td button {
     border-radius: 5px;
     color: black;
 }
+
+
 
 .container-do-search {
     margin-top: 20px;
