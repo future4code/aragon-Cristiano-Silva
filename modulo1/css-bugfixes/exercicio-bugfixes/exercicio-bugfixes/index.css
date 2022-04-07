@@ -35,6 +35,7 @@ img {
 }
 
 div>p:first-child {
+    padding-top: 70px;
     display: block;
 }
 
@@ -42,8 +43,6 @@ div>p:first-child {
 
 .botao-amarelo {
     position: relative;
-    right: 21%;
-    top: 40%;
     background-color: #ffaf43;
     width: 250px;
     height: 40px;
@@ -144,6 +143,7 @@ td button {
     border-radius: 5px;
     font-size: 10px;
     color: black;
+    margin: 230px;
 }
 
 #back-button:hover {
