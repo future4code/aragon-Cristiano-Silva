@@ -1,9 +1,7 @@
 /* INDEX */
 
-
 body{
-    background-image:linear-gradient(to right, white,rgb(67, 67, 153)) ;
-    
+    background-image:linear-gradient(to right, white,rgb(67, 67, 153)) ;  
 
 }
 header{
@@ -11,16 +9,11 @@ header{
     color: rgb(75, 129, 173);
 }
 
-.imagem-logos{
+.imagem-logos, .paragrafo1{
     margin: 2px;
     justify-content: center;
-    
-}
-
-img {
-    align-items: center;
-    justify-content: center;
-    
+    text-align: center;
+    color: white;
     
 }
 
@@ -36,14 +29,9 @@ footer {
     margin-right: auto;
 }
 
-.paragrafo-footer{
-    color: white;
+
+
+a:hover{ /*:active :focus*/
+    color: rgb(107, 86, 59);
 }
 
-/*FUNCIONARIOS*/
-
-
-
-/*CONTROLE DE ESTOQUE*/
-
-/*ADD PRODUTO*/
