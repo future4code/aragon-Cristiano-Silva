@@ -35,7 +35,7 @@ img {
 }
 
 div>p:first-child {
-    display: inline;
+    display: block;
 }
 
 
@@ -43,13 +43,14 @@ div>p:first-child {
 .botao-amarelo {
     position: relative;
     right: 21%;
-    top: 10%;
+    top: 40%;
     background-color: #ffaf43;
     width: 250px;
     height: 40px;
     border-radius: 5px;
     font-size: 20px;
     color: white;
+    
 }
 
 .botao-amarelo:hover {
