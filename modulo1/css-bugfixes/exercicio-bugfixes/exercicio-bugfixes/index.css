@@ -97,13 +97,16 @@ div img {
   *
   **/
 
+
 div:nth-child(2),
 div:last-child {
     text-align: center;
+    
 }
 
 table {
-    width: 60%;
+    width: 100%;
+    text-align: center;
 }
 
 td button {
