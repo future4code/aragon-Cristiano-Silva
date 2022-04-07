@@ -34,9 +34,7 @@ div>p:first-child {
     display: inline;
 }
 
-div img {
-    background: black;
-}
+
 
 .botao-amarelo {
     position: relative;
@@ -61,6 +59,7 @@ div img {
 
 .icone {
     height: 15px;
+    width: 35px;
 }
 
 
