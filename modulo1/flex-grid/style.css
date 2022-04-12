@@ -43,7 +43,7 @@ footer p{
     background-color: #f2d0e0;
     padding: 15px;
     width: 250px;
-    height: 600px;
+    height: 100vh;
     padding-bottom: 30px;
 
     display: block;
@@ -60,7 +60,7 @@ img{
 
 .lista-doces{
     padding: auto;
-    margin-left: 265px;
+    margin-left: 260px;
 
     display: grid;
     grid-template-rows: 1fr 1fr ;
@@ -81,8 +81,8 @@ img{
     text-align: center;
 }
 .bolo-chocolate > img{
-    width: 250px;
-    height: 200px;
+    width: 370px;
+    height: 340px;
     
 }
 .bolo-chocolate >h3,p {
@@ -96,6 +96,7 @@ img{
     float: right;
     margin: 0 0 10px 10px;
 }
+
 
 
 
