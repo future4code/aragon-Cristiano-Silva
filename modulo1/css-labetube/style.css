@@ -26,10 +26,7 @@ header{
 h1{
     margin-left: -1vw;
 }
-header button{
-    width: 6vw;
-    cursor:pointer;
-}
+
 
 div video{
     width: 100%;
@@ -65,7 +62,7 @@ footer{
     width: 100vw;
     height: 10vh;
     color: white;
-    position:absolute;
+    position:fixed;
     bottom: 0;
 
   /*  grid-column-start: 1;
@@ -93,4 +90,34 @@ h4 p {
     width: 80vh;
     height: 60vh;
     margin-left: 30%;
+}
+
+
+
+/* media query*/
+@media screen and (min-device-width: 320px) and (max-device-width: 480px){
+    main{
+        grid-template-columns: 1fr;
+    }
+
+    #buscar{
+        width: 20vw;
+    }
+    footer{
+        height: 5vh;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    footer p {
+       
+        font-size:16px;
+        text-align: center;
+        
+        
+    }
+
+
+    
 }
