@@ -1,0 +1,25 @@
+.TodosMeusDados {
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    padding: 20px 10px;
+    margin-bottom: 10px;
+    height: 80px;
+    width: 40vw;
+}
+
+.TodosMeusDados  > img {
+    width: 30px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.TodosMeusDados  h5 {
+    margin-bottom: 5px;
+}
+
+.TodosMeusDados > div {
+    display: flex;
+    flex-direction: column;
+    justify-items: flex-start;
+}
