@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import  './CardPequeno.css'
 
 function MeusDados(props){

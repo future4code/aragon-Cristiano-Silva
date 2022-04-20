@@ -11,4 +11,11 @@
 .image-button-container > img {
     width: 30px;
     margin-right: 10px;
+
+}
+
+.image-button-container:hover{
+    background-color: rgb(176, 212, 212);
+    transition: 1s;
+    color: white;
 }
