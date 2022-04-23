@@ -64,10 +64,8 @@ class App extends React.Component {
   }
   
   const novosPosts= [...this.state.postar, novoPost]
-  this.setState ({postar:novosPosts})
-  this.setState ({nomeInputUsuario : "",})
-  this.setState ({fotoInputUsuario : "",})
-  this.setState ({fotoInputPost    : "",})
+  this.setState ({postar:novosPosts, nomeInputUsuario:"",fotoInputUsuario:"",fotoInputPost:""})
+  
 
 }
 
