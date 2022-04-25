@@ -4,13 +4,14 @@ class MenssegerChat extends React.Component{
     
     state ={
 
+       chats: [{ 
+           
+        usuario: " ",
+        mensagem: " ",}
+        ],
+
         valorInputUsuario: "",
         valorInputMensagem: "",
-
-        chats: [
-          
-        ]
-
     }
 
 
@@ -34,13 +35,16 @@ class MenssegerChat extends React.Component{
     render(){
         const listaDeChat = this.state.chats.map((chat) => {
             return (
-                <h2>{chat.usuario}</h2> - <p>{chat.mensagem}</p>
+                <div>
+                   {chat.usuario} :  {chat.mensagem}
+                </div>               
             )
         });
 
         return (
                        
             <div>
+                <div>{listaDeChat}</div>
                 <input className="User"
                 value={this.state.valorInputUsuario}
                 onChange={this.onChangeInputUsuario}
@@ -53,7 +57,7 @@ class MenssegerChat extends React.Component{
                 placeholder={"mensagem"}
                 />
                 <button onClick={this.adicionaMensagem}>Enviar</button>
-                <div>{listaDeChat}</div>
+               
             </div>
            
         )
