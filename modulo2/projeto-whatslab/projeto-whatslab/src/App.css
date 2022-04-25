@@ -1,0 +1,36 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.App{
+  display: flex;
+  border: 1px solid black;
+  flex-direction: column;
+  width: 600px;
+  justify-content: flex-end;
+  height: 100vh;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: url(https://tm.ibxk.com.br/2016/09/13/13162448904561.jpg?ims=1200x675);
+}
+
+.User{
+  width: 100px;
+}
+
+.Mensseger{
+  width: 453px;
+}
+
+button{
+  width:45px;
+  
+}
+
+
+
+
+
