@@ -22,8 +22,14 @@
   width: 100px;
 }
 
+.usuario{
+  text-align: left;
+  padding-bottom: 5px;
+}
+
 .Mensseger{
   width: 453px;
+  text-align: left;
 }
 
 button{

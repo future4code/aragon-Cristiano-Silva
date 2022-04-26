@@ -36,7 +36,7 @@ class MenssegerChat extends React.Component{
         const listaDeChat = this.state.chats.map((chat) => {
             return (
                 <div>
-                   {chat.usuario} :  {chat.mensagem}
+                   {chat.usuario}:  {chat.mensagem}
                 </div>               
             )
         });
@@ -44,7 +44,7 @@ class MenssegerChat extends React.Component{
         return (
                        
             <div>
-                <div>{listaDeChat}</div>
+                <div className="usuario">{listaDeChat}</div>
                 <input className="User"
                 value={this.state.valorInputUsuario}
                 onChange={this.onChangeInputUsuario}
