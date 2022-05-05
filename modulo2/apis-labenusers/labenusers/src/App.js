@@ -1,6 +1,9 @@
 import React from "react"
 import TelaCadastro from "./components/TelaCadastro"
 import TelaListaUsuarios from "./components/TelaListaUsuarios"
+import './style.css'
+
+
 
 export default class App extends React.Component {
   state = {
@@ -28,7 +31,8 @@ export default class App extends React.Component {
 
   render(){
     return (
-      <div>
+      
+      <div className="App">
         {this.escolheTela()}
       </div>
     )

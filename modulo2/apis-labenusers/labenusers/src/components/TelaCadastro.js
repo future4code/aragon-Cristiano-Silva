@@ -1,5 +1,12 @@
 import React from "react"
 import axios from "axios"
+import styled from "styled-components"
+
+const div = styled.div `
+    border: 1px solid black;
+
+`
+
 
 export default class TelaCadastro extends React.Component {
     state = {
@@ -38,7 +45,7 @@ export default class TelaCadastro extends React.Component {
 
     render(){
         return(
-            <div>
+            <div className="cadastro">
                 <button onClick={this.props.irParaLista}>Ir para Lista de Usuários</button>
                 <h2>Cadastro</h2>
                 <input

@@ -9,8 +9,8 @@ const CardUsuario = styled.div`
     width: 300px;
     display: flex;
     justify-content: space-between;
+    
 `
-
 
 export default class TelaListaUsuarios extends React.Component {
     state = {
@@ -23,17 +23,7 @@ export default class TelaListaUsuarios extends React.Component {
 
     pegarUsuarios = async() => {
         const url = "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users"
-        // axios.get(url, {
-        //     headers: {
-        //         Authorization: "chijo-paiva"
-        //     }
-        // }).then((res) => {
-        //     this.setState({ usuarios: res.data })
-        // })
-        // .catch((err) => {
-        //     alert("Ocorreu um problema, tente novamente")
-        // })
-
+        
         try {
             const res = await axios.get(url, {
                 headers: {
