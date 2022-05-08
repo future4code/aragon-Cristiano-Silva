@@ -1,88 +1,52 @@
 import React from 'react';
-import axios from 'axios';
+import Listas from './pages/Listas';
+import NovaPlaylist from './pages/NovaPlaylist';
+
 
 
 
 class App extends React.Component {
   state = {
-    playlists: [],
-    inputName: ""
+    telaAtual : "lista",
+    clicarMusica: ""
   }
 
-  onChangeInput = (e) => {
-    this.setState({ inputName: e.targe.value})
-  }
-
-  componentDidMount(){
-    this.getPlaylists()
-  }
-
-  getPlaylists = () => {
-    axios.get(
-      "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists",
-      {
-        headers: {
-          Authorization: "cristiano-silva-aragon"
-        }
-      }
-    )
-    .then((response) => {
-      this.setState({playlists: response.data.result.list})
-    })
-    .catch((error) => {
-      console.log(error.message)
-    })  
-
-  }
-    createPlaylist = () => {
-      const body = {
-        name: this.state.inputName
-      }
-
-
-      axios.post(
-        "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists", 
-        body,
-        {
-          headers: {
-            Authorization: "cristiano-silva-aragon"
-          }
-        }
-      )
-      .then((response) => {
-        this.getPlaylists()
-      })  
-      .catch((error) => {
-        console.log(error.message)
-      })
+  escolherTela =() => {
+    switch (this.state.telaAtual) {
+      case "novaplaylist":
+        return <NovaPlaylist irParaLista ={this.irParaLista}/>
+      case  "lista":
+        return <Listas irParaNovaPlaylist={this.irParaNovaPlaylist}/>
+      default:
+        return <div>Erro! Página não encontrada </div> 
     }
+  }
 
+  detalheDaPagina =(url) => {
+    this.setState({telaAtual: "novaplaylist", clicarMusica: url})
+  }
 
-  
+  irParaNovaPlaylist = () => {
+    this.setState({telaAtual: "novaplaylist"}) // para ir a lista de detalhes 
+  }
+
+  irParaLista = () => {
+    this.setState({telaAtual: "lista"})  // para ir a lista 
+  }
+
+  irParaVerMusicas =() => {
+    this.setState({telaAtual: "vermusicas"}) // para ver musicas
+  }
+
 
   render () {
+
     return (
-      <main>
-        <h1>Playlists Labefy</h1>
 
-        <hr />
-
-        <section>
-          <label>
-            Nome da playlist
-            <input value={this.state.inputName} onChange={this.onChangeInput} />
-
-            <button onClick={this.createPlaylist}>Nova playlist</button>
-          </label>
-        </section>
-
-        <section>
-          {this.state.playlists.map((playlist) => {
-            return <p key={playlist.id}>{playlist.name}</p>
-          })}
-        </section>
-
-      </main>
+      <div>
+       {this.escolherTela()}      
+      </div>
+     
     )
   }
 }
