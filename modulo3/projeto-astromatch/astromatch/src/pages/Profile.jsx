@@ -5,7 +5,7 @@ import { API_CLIENT, BASE_URL } from "../constants/url"
 
 function Profile(){
 
-    const [profile, setProfile] =useState(undefined)
+    const [profile, setProfile] =useState({})
 
     useEffect(() => {
         getProfile()
@@ -25,6 +25,34 @@ function Profile(){
 
     }
 
+    const novoPerfil = (perfilId, curtiu ) => {
+        const url = ` ${BASE_URL}/${API_CLIENT}/choose-person`
+
+        const body = { id: perfilId,  choice: curtiu }
+        axios
+        .post(url,body)
+            .then((res) => {
+                console.log(res.data)
+                getProfile(res.data)
+            })
+            .catch((err) =>{
+                console.log(err.message)
+            })
+    } 
+
+    const resetProfiles = () => {
+        const url = `${BASE_URL}/${API_CLIENT}/clear`;
+
+        axios.put(url)
+            .then(() => {
+                alert("Perfis resetados com sucesso!");
+                getProfile();
+            })
+            .catch((err) => {
+                console.log(err.message);
+            });
+    };
+
     const profileCard = profile && (
         <figure>
             <img src={profile.photo}
@@ -33,7 +61,8 @@ function Profile(){
             />
             <p>{profile.name}, {profile.age}</p>
             <p>{profile.bio}</p>
-            <button onClick={() =>getProfile()}>Próximo perfil</button>
+            <button onClick={() => {novoPerfil(profile.id, false) }}>Dislike</button>
+            <button onClick={() => {novoPerfil(profile.id, true)}}>Like</button>
         </figure>
     )
 
@@ -42,6 +71,7 @@ function Profile(){
         <>
             <h2>Perfis</h2>
             {profileCard}
+            <button onClick={() => resetProfiles()}>Resetar Perfis</button>
         </>
         
     )
