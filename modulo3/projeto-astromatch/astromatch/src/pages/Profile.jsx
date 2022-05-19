@@ -1,6 +1,44 @@
 import {useEffect, useState} from "react"
 import axios from "axios"
 import { API_CLIENT, BASE_URL } from "../constants/url"
+import styled from "styled-components"
+import {BsHandThumbsUp, BsHandThumbsDown} from "react-icons/bs"
+
+const ButtonVermelho = styled.button `
+    background-color: red;
+    color: white;
+    border-radius: 50px;
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+
+    &:hover{
+        cursor: pointer;
+        transition: .3s ease-in-out;
+        background-color: #8d2121;
+        color: white;
+    }
+
+`
+
+const ButtonVerde = styled.button `
+    background-color: green;
+    color: white;
+    border-radius: 50px;
+    padding: 10px;
+    width: 50px;
+    margin-left: 15px;
+    height: 50px;
+
+    &:hover{
+        cursor: pointer;
+        transition: .3s ease-in-out;
+        background-color: #2b9e2b;
+        color: white;
+    }
+
+`
+
 
 
 function Profile(){
@@ -32,7 +70,9 @@ function Profile(){
         axios
         .post(url,body)
             .then((res) => {
-                console.log(res.data)
+                if(body.choice && res.data.isMatch){
+                    alert("Deu Match")
+                }
                 getProfile(res.data)
             })
             .catch((err) =>{
@@ -53,17 +93,24 @@ function Profile(){
             });
     };
 
-    const profileCard = profile && (
+    const profileCard = profile ? (
         <figure>
             <img src={profile.photo}
                  alt={profile["photo_alt"]}
                  height={"240px"}
+                 width={"250px"}
             />
             <p>{profile.name}, {profile.age}</p>
             <p>{profile.bio}</p>
-            <button onClick={() => {novoPerfil(profile.id, false) }}>Dislike</button>
-            <button onClick={() => {novoPerfil(profile.id, true)}}>Like</button>
+            <ButtonVermelho onClick={() => {novoPerfil(profile.id, false) }}><BsHandThumbsDown/></ButtonVermelho>
+            <ButtonVerde onClick={() => {novoPerfil(profile.id, true)}}> <BsHandThumbsUp/> </ButtonVerde>
         </figure>
+    ) : (
+        <>
+            <h4>Acabaram os matches! Clique em "Resetar Perfis" para reiniciar</h4>
+            <button onClick={() => resetProfiles()}>Resetar Perfis</button>
+        </>
+
     )
 
 
@@ -71,7 +118,7 @@ function Profile(){
         <>
             <h2>Perfis</h2>
             {profileCard}
-            <button onClick={() => resetProfiles()}>Resetar Perfis</button>
+            
         </>
         
     )

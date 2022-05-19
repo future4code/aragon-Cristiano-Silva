@@ -1,6 +1,16 @@
 import {useState, useEffect} from "react"
 import axios from "axios"
 import { API_CLIENT, BASE_URL } from "../constants/url"
+import styled from "styled-components"
+
+const Figure =styled.figure`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 250px;
+
+`
+
 
 function Matches (){
 
@@ -27,16 +37,17 @@ function Matches (){
 
     const novosMatches = matches && matches.map((match) => {
         return(
-            <figure key={match.id}>
+            <Figure key={match.id}>
             
                 <img
                     src={match.photo}
                     alt={`foto de ${match.name}`}
-                    height={"32px"}
+                    height={"50px"}
+                    width={"80px"}
                 />    
                 <span>{match.name}</span>
-                <hr />
-            </figure>
+                
+            </Figure>
         )
     })
     return(

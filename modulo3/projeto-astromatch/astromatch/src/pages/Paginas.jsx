@@ -2,12 +2,31 @@ import Matches from "./Matches";
 import Profile from "./Profile";
 import {useState} from "react"
 import Header from "../components/Header";
+import styled from "styled-components";
+
+
+
+const Main = styled.main `
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #f6585d;
+    color: white;
+    width: 300px;
+    margin: auto;
+    font-size: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      
+   
+`
+
+
 
 function Paginas (){
 
     const [pagina, setPaginas ] = useState('perfil')
-
-
 
     
     const paginaAtual = () => {
@@ -19,14 +38,6 @@ function Paginas (){
             return < Profile />
         }
 
-       /*  switch (pagina) {
-            case "perfil":
-                return<Profile />
-            case "matches":
-                return<Matches/>
-            default:
-                return<Profile />        
-        } */
     }
 
     const irParaProfile =() => {  //  atualizando  o estado pagina para perfil
@@ -44,10 +55,10 @@ function Paginas (){
                 irParaProfile={irParaProfile}
                 irParaMatches={irParaMatches}
             />
-            <hr />
-            <main>
+            
+            <Main>
                 {paginaAtual()}
-            </main>
+            </Main>
 
         </>
     )
