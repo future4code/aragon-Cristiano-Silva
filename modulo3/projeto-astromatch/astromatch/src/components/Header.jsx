@@ -10,6 +10,7 @@ const Cabecalho = styled.header `
     background-color: #f6585d;
     color: white;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-top: 100px;
 `
 
 const Button = styled.button`
