@@ -63,9 +63,9 @@ function Admin (){
                   name={"name"}
                   value={form.name}
                   onChange={onChange}
-                  pattern={"^,{5,}$"}
+                  /* pattern={"^,{5,}$"}
                   title={"O nome da viagemdeve ter no mínimo 5 caracteres"}
-                  required                  
+                  required  */                 
                 />
                   <label htmlFor={"planet"}>Planeta:</label>
                   <select

@@ -2,14 +2,16 @@ import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { goToAdmin, goToHome } from "../routes/coordinator";
 import useRequestData from "../hooks/useRequestData"
+import { decideCandidate } from "../services/requests"
 
 function TripDetailsPage() {
+
     
     const navigate = useNavigate()
 
     const params = useParams()
 
-    const[detailsData] = useRequestData(`trip/${params.tripId}`, {})
+    const[detailsData, getTripsDetail] = useRequestData(`trip/${params.tripId}`, {})
 
     useEffect(() => {
         if (!localStorage.getItem("token")){
@@ -17,7 +19,13 @@ function TripDetailsPage() {
         }
     },[])
 
-    const candidateList = detailsData.trip && detailsData.trip.candidates.map((candidate) => {
+    const decide = (candidateId, decision) => {
+        
+
+        decideCandidate(params.tripId, candidateId, decision, getTripsDetail)
+    }
+
+    const candidatesList = detailsData.trip && detailsData.trip.candidates.map((candidate) => {
         return(
             <div key={candidate.id}>
                 <span><b>Nome:</b>{candidate.name}</span>
@@ -25,10 +33,14 @@ function TripDetailsPage() {
                 <span><b>Idade:</b>{candidate.age}</span>
                 <span><b>País:</b>{candidate.country}</span>
                 <span><b>Texto de Candidatura:</b>{candidate.applicationText}</span>
-                <button>Aprovar</button>
-                <button>Reprovar</button>
+                <button onClick={() => decide(candidate.id,true)}>Aprovar</button>
+                <button onClick={() => decide(candidate.id,false)}>Reprovar</button>
             </div>
         )
+    })
+
+    const approvedList = detailsData.trip && detailsData.trip.approved.map((pariticpant) => {
+        return <li key={pariticpant.id}>{pariticpant.name}</li>
     })
 
     return (
@@ -37,9 +49,10 @@ function TripDetailsPage() {
             <h1>Viagem: {detailsData.trip && detailsData.trip.name}</h1>
             <hr />
             <h3>Lista de Candidatos</h3>
-            {candidateList}
+            {candidatesList}
             <hr />
             <h3>Lista de Aprovados</h3>
+            {approvedList}
         </>
 
     )

@@ -18,9 +18,19 @@ export const requestLogin = (email, password, navigate) => {
         goToAdmin(navigate)
     })
     .catch((err) => {
-        alert("Um erro ocorreu! Tente Novamente")
-        console.log(err.message)
+        
+        alert(err.message)
     })
+}
+
+export const sendApplication = (body, tripId, clear) => {
+    axios.post(`${BASE_URL}/${API_CLIENT}/trips/${tripId}/apply`, body)
+        .then(() => {
+            alert("Aplicação enviada com sucesso!");
+
+            clear();
+        })
+        .catch((err) => alert(err.response.message))
 }
 
 
@@ -42,6 +52,35 @@ export const createTrip = (body, clear, getTripsData) =>{
     })
 
 }
+
+export const decideCandidate = (tripId, candidateId, decision, getTripsDetail) => {
+    const header = {
+        headers: {
+            auth: localStorage.getItem("token")
+        }
+    };
+
+    const body = {
+        approve: decision
+    };
+
+    axios.put(`${BASE_URL}/${API_CLIENT}/trips/${tripId}/candidates/${candidateId}/decide`,
+        body,
+        header
+    )
+        .then(() => {
+         
+            decision ?
+            alert("Candidato aceito na viagem!")
+            : alert("Candidatura reprovada com sucesso!");
+
+            getTripsDetail();
+        })
+        .catch((err) => {
+            alert(err.message);
+        });
+};
+
 
 
 
