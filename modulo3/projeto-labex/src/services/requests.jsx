@@ -24,6 +24,27 @@ export const requestLogin = (email, password, navigate) => {
 }
 
 
+export const createTrip = (body, clear, getTripsData) =>{
+    const header = {
+        headers: {
+            auth: localStorage.getItem("token")
+        }
+    }
+    axios
+    .post(`${BASE_URL}/${API_CLIENT}/trips`, body, header)
+    .then(() => {
+        alert("Viagem criada com sucesso!")
+        clear()
+        getTripsData()
+    })
+    .catch((err) =>{
+        alert(err.message)
+    })
+
+}
+
+
+
 export const deleteTrip = (tripId, getTripsData) => {
     const header = {
         headers: {
