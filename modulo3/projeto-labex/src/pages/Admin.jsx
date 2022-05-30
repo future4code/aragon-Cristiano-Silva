@@ -8,7 +8,77 @@ import useRequestData from "../hooks/useRequestData"
 import actualDate from "../utils/actualDate"
 import { planets } from "../constants/planets"
 import useForm from "../hooks/useForm"
+import styled from "styled-components"
 
+const Section = styled.section `
+    color:white;
+    background-color: #222;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction:column;
+    justify-content: center;
+    margin: auto;
+
+    input{
+        height: 35px;
+        border-radius: 4px;
+        border: solid 1px chartreuse;
+        margin:6px;
+        width: 183px;
+    }
+    select, option{
+        height: 37px;
+        border-radius: 4px;
+        border: solid 1px chartreuse;
+        margin:8px;
+    }
+    button{
+      text-align: center;
+      background-color: chartreuse;
+      color: #0c0c35;
+      height: 35px;
+      width: 300px;
+      display: flex;
+      justify-content: center;
+      margin: auto;
+      align-items: center;
+      margin-bottom: 15px;
+      margin-top: 15px;
+
+      &:hover{
+        cursor: pointer;
+        transition: .3s ease-in-out;
+        border-bottom: 1px solid ;
+        background-color: #6ccf09;
+        color: white;
+    }
+  }
+  h2 {
+    color: chartreuse;
+    font-size: 30px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+    
+  @media (max-width:900px) {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+
+        h1{
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+       
+        
+    }
+
+   `
 
 
 //Pagina do Adm
@@ -51,14 +121,15 @@ function Admin (){
     return(
         <>
           <Header />
-          <hr />
+        
           <main>
-            <section>
+            <Section>
               <h2>Crie uma nova Viagem</h2>
 
                 <form onSubmit={onClickCreate}>
-                  <label htmlFor={"name"}>Nome:</label>
+                  <label htmlFor={"name"}>{/* Nome: */}</label>
                   <input
+                  placeholder="Digite seu Nome:"
                   id={"name"}
                   name={"name"}
                   value={form.name}
@@ -67,8 +138,9 @@ function Admin (){
                   title={"O nome da viagemdeve ter no mínimo 5 caracteres"}
                   required  */                 
                 />
-                  <label htmlFor={"planet"}>Planeta:</label>
+                  <label htmlFor={"planet"}>{/* Planeta: */}</label>
                   <select
+                  placeholder="Planeta:"
                   name={"planet"}
                   id={"planet"}
                   defaultValue={""}
@@ -82,8 +154,9 @@ function Admin (){
                 })}
                 </select>
 
-                <label htmlFor={"date"}>Data de Lançamento:</label>
+                <label htmlFor={"date"}>{/* Data de Lançamento: */}</label>
                 <input 
+                  placeholder="Data de lançamento:"
                   id={"date"}
                   type={"date"}
                   name={"date"}
@@ -93,8 +166,9 @@ function Admin (){
                   required
                 />
 
-                <label htmlFor={"description"}> Descrição: </label>
+                <label htmlFor={"description"}> {/* Descrição: */} </label>
                  <input
+                    placeholder="Descrição:"
                     id={"description"}
                     name={"description"}
                     value={form.description}
@@ -113,10 +187,11 @@ function Admin (){
                     min={30}
                     required
                 />
+                <br />
                 <button type={"submit"}>Criar</button>
               </form>
 
-           </section>            
+           </Section>            
             <hr />
 
             <section>

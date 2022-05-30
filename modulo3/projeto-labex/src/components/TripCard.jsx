@@ -1,5 +1,24 @@
 import { useNavigate } from "react-router-dom"
 import { goToTripDetailsPage } from "../routes/coordinator"
+import styled from "styled-components"
+
+const Button = styled.button `
+        margin-left: 6px;
+        width: 100px;
+        margin-top: 1px;
+        height: 29px;
+        background-color: chartreuse;
+        border: none;
+        color: #04041d;
+
+        &:hover{
+        cursor: pointer;
+        transition: .3s ease-in-out;
+        border-bottom: 1px solid ;
+        background-color: #6ccf09;
+        color: white;
+        }
+`
 
 // Renderizar os cards
 
@@ -22,8 +41,8 @@ function TripCard(props){
 
             {token && (
                 <>
-                    <button onClick={() => goToTripDetailsPage(navigate, id)}>Exibir detalhes</button>
-                    <button onClick={() =>props.removeTrip(id)}>Excluir viagem</button>
+                    <Button onClick={() => goToTripDetailsPage(navigate, id)}>Exibir detalhes</Button>
+                    <Button onClick={() =>props.removeTrip(id)}>Excluir viagem</Button>
                 
                 </>
             )}

@@ -3,6 +3,38 @@ import { useNavigate, useParams } from "react-router-dom";
 import { goToAdmin, goToHome } from "../routes/coordinator";
 import useRequestData from "../hooks/useRequestData"
 import { decideCandidate } from "../services/requests"
+import styled from "styled-components";
+
+
+const Section = styled.section `
+    background-color: #222;
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+    span {
+        display: flex;
+        flex-direction: column;
+        padding: 5px;
+    }
+
+    button {
+        width: 100px;
+        height: 40px;
+        margin: 10px;
+        background-color: chartreuse;
+        border: none;
+        color: #04041d;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+        &:hover{
+            cursor: pointer;
+            transition: .3s ease-in-out;
+            border-bottom: 1px solid ;
+            background-color: #6ccf09;
+            color: white;
+        }
+    }
+`
 
 function TripDetailsPage() {
 
@@ -45,14 +77,17 @@ function TripDetailsPage() {
 
     return (
         <>
-            <button onClick={() => goToAdmin(navigate)}>Sair de detalhes</button>
-            <h1>Viagem: {detailsData.trip && detailsData.trip.name}</h1>
-            <hr />
-            <h3>Lista de Candidatos</h3>
-            {candidatesList}
-            <hr />
-            <h3>Lista de Aprovados</h3>
-            {approvedList}
+            <Section>
+                <button onClick={() => goToAdmin(navigate)}>Sair de detalhes</button>
+                <h1>Viagem: {detailsData.trip && detailsData.trip.name}</h1>
+                <hr />
+                <h3>Lista de Candidatos</h3>
+                {candidatesList}
+                <hr />
+                <h3>Lista de Aprovados</h3>
+                {approvedList}
+            </Section>
+            
         </>
 
     )
