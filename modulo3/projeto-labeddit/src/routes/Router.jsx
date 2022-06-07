@@ -1,4 +1,4 @@
-import { BrowserRouter, Router, Route } from "react-router-dom"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Feed from "../pages/Feed"
 import Signup from "../pages/Signup"
 import Post from "../pages/Post"
@@ -7,17 +7,17 @@ import Login from "../pages/Login"
 
 
 
-const Router = () => {
+const  Router = () => {
   return (
     <div>
         <BrowserRouter>
-            <Router>
+            <Routes>
                 <Route index element={<Feed/>}/>
                 <Route path={"/login"} element={<Login />}/>
                 <Route path={"/signup"} element={<Signup />}/>
                 <Route path={"/post/:${postId}"} element={<Post />}/>
                 <Route path={"*"} element={<Error />}/>
-            </Router>
+            </Routes>
         </BrowserRouter>
     </div>
   )
