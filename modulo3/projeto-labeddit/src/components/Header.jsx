@@ -7,6 +7,7 @@ const Header = (props) => {
 
     const logout =() =>{
         if(window.confirm("Tem certeza que deseja sair?")){
+            
             localStorage.removeItem("token")
             localStorage.removeItem("userEmail")
             goToLogin(navigate)
