@@ -34,7 +34,7 @@ export const requestSignUp = (form, clear, navigate) =>{
     }
 
     axios
-    .post(`${BASE_URL}/user/signup`, body)
+    .post(`${BASE_URL}/users/signup`, body)
         .then((res) =>{
             localStorage.setItem("token", res.data.token)
             localStorage.setItem("userEmail", form.email)
@@ -67,6 +67,31 @@ export const requestCreatePost = (form, clear, getPosts) =>{
         alert(res.data)
 
         getPosts()
+        clear()
+    })
+    .catch((err) =>{
+        console.log(err.message)
+    })
+}
+
+export const requestCreateComment =(form, clear, getPostComments, postId)=>{
+
+    const header ={
+        headers: {
+            authorization: localStorage.getItem("token")
+        }
+    }
+
+    const body =  {
+        body: form.body
+    }
+
+    axios
+    .post(`${BASE_URL}/posts/${postId}/comments`, body, header)
+    .then((res) => {
+        alert(res.data)
+
+        getPostComments(postId)
         clear()
     })
     .catch((err) =>{

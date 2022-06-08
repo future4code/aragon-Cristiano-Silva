@@ -34,7 +34,7 @@ const Signup = () => {
           name={"name"}
           value={form.name}
           onChange={onChange}
-          pattern={"^.{3,}$"}
+          pattern={"^.{3,}$"} 
           title={"O nome deve ter no mínimo 3 caracteres"}
           required
         />
@@ -49,7 +49,7 @@ const Signup = () => {
           required
         />
         <br />
-        <label htmlFor={"name"}>Senha:</label>
+        <label htmlFor={"password"}>Senha:</label>
           <input
           id={"password"}
           name={"password"}

@@ -34,6 +34,8 @@ const Feed = () => {
       <PostCard
         key={post.id}
         post={post}
+
+        isFeed={true}
       />
     )
   })
