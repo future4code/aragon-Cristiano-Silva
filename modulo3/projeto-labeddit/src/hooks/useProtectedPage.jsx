@@ -16,11 +16,7 @@ export const useProtectedPage = () => {
         }
     })
 
-  return (
-    <div>
 
-    </div>
-  )
 }
 
 export default useProtectedPage

@@ -2,7 +2,7 @@ import { useState } from "react"
 
 // custom hook useForm utilizado para atualizar de forma continua campo de valores
 // inseridos em inputs de um dado form, podendo reseta-los também.
-export const useForm = (initialState) => {
+const useForm = (initialState) => {
     const [form, setForm] =useState(initialState)
 
     //atualiza cada propriedade da variável form.    
@@ -18,9 +18,8 @@ export const useForm = (initialState) => {
     }
 
     //retorna um objeto com as propriedades form, onChange e clear
-  return (
-    {form, onChange,clear}
-  )
+  return {form, onChange,clear}
+  
 }
 
 export default useForm

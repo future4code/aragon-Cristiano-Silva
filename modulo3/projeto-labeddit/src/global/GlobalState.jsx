@@ -1,9 +1,7 @@
 import axios from "axios"
 import { BASE_URL } from "../constants/urls"
 import { useState } from "react"
-import GlobalStateContext from "./GlobalStateContext"
-
-
+import GlobalStateContext from "../global/GlobalStateContext"
 
 const GlobalState = (props) => {
     const [posts, setPosts] = useState([])

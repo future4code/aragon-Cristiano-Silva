@@ -65,6 +65,9 @@ export const requestCreatePost = (form, clear, getPosts) =>{
     .post(`${BASE_URL}/posts`, body, header)
     .then((res) =>{
         alert(res.data)
+
+        getPosts()
+        clear()
     })
     .catch((err) =>{
         console.log(err.message)

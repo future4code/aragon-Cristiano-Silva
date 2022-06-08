@@ -1,8 +1,8 @@
-import format from "react"
+ import {format} from 'date-fns'
 
 
 const PostCard = (props) => {
-    const {id, userId, title, body, createdAt, voteSum, commentCount} =props.Post
+    const {id, userId, title, body, createdAt, voteSum, commentCount} =props.post
 
     const date = createdAt && format(new Date(createdAt), "dd/MM/yyyy")
 
@@ -16,7 +16,7 @@ const PostCard = (props) => {
             <p><b>Descrição: </b>{body}</p>
 
             <p>Votos: {voteSum ? voteSum: 0}</p>
-            <button>VOtar em "não gostei</button>
+            <button>Votar em "não gostei</button>
             <br />
             <button>Votar em Gostei"</button>
 
@@ -29,4 +29,4 @@ const PostCard = (props) => {
 
 }
 
-export default PostCard
+export default PostCard 

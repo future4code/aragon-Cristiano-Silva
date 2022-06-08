@@ -1,4 +1,4 @@
-import { useEffect, useContext } from "react"
+import { useContext, useEffect } from "react"
 import Header from "../components/Header"
 import useForm from "../hooks/useForm"
 import useProtectedPage from "../hooks/useProtectedPage"
@@ -12,9 +12,9 @@ const Feed = () => {
   // Hook que verifica se a tela é protegida, se não for força exibição de login.
   useProtectedPage() 
 
-  const {form, onChange, clear} = useForm({title: "", body:""})
+  const {form, onChange, clear} = useForm({title: "", body:""}) 
+  const { states, getters } = useContext(GlobalStateContext);
 
-  const {states, getters} = useContext(GlobalStateContext)
   const {posts} = states
 
   const {getPosts} = getters
@@ -32,8 +32,8 @@ const Feed = () => {
   const showPosts = posts.length && posts.map((post) =>{
     return (
       <PostCard
-      key={post.id}
-      post={post}
+        key={post.id}
+        post={post}
       />
     )
   })
@@ -48,7 +48,7 @@ const Feed = () => {
       <hr />
       <section>
         <h2>Crie um novo Post</h2>
-        <form>
+        <form onSubmit={createPost}>
           <label htmlFor={"title"}>Título:</label>
           <input
           id={"title"}
