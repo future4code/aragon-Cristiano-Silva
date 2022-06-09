@@ -15,3 +15,7 @@ export const goToSignup=(navigate) =>{// pagina de cadastro
 export const goToPost = (navigate, postId) =>{// pagina de detales do post
     navigate(`/post/${postId}`)
 }
+
+export const goBack = (navigate) =>{
+    navigate(navigate -1)
+}

@@ -76,12 +76,12 @@ const Post = () => {
           type="text"
           id={"body"}
           name={"body"}
-          /* value={form.body} */
+          value={form.body} 
           onChange={onChange}
           pattern={"^.{5,}$"}
           title={"O nome deve ter no mínimo 5 caracteres"}
           required 
-          value
+          
           />
           <br />
           <button type={"submit"}>Criar Post</button>

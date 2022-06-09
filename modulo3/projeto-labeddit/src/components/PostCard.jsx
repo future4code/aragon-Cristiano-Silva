@@ -1,20 +1,33 @@
 import { format } from 'date-fns'
-import { useContext } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import GlobalStateContext from '../global/GlobalStateContext'
 import { goToPost } from "../routes/coordinator"
+import { requestChangePostVote, requestCreatePostVote, requestDeletePostVote } from '../services/requests'
 
 
 const PostCard = (props) => {
     const navigate = useNavigate()
 
-    const { setters } = useContext(GlobalStateContext)
+    const { setters, getters } = useContext(GlobalStateContext)
 
     const { setPost } = setters
 
-    const {id, userId, title, body, createdAt, voteSum, commentCount} =props.post
+    const [ isDownVoted, setIsDownVoted]= useState(false)
+
+    const [isUpVoted, setIsUpVoted] = useState(false)
+    
+    const { getPosts } = getters
+
+    const {id, userId, title, body, createdAt, voteSum, commentCount, userVote} =props.post
 
     const date = createdAt && format(new Date(createdAt), "dd/MM/yyyy")
+
+    useEffect(() =>{
+        if(userVote){
+            userVote === 1 ? setIsUpVoted(true) : setIsDownVoted(true)
+        }
+    },[userVote])
 
     const goToComments = () => {
         setPost(props.post)
@@ -22,6 +35,57 @@ const PostCard = (props) => {
 
         goToPost(navigate, id)
     }
+
+    const chooseVote = (typeVote) =>{
+        if (typeVote === "up"){
+            if(isDownVoted) {
+                requestChangePostVote(id,1, getPosts)
+
+                setIsUpVoted(true)
+                setIsDownVoted(false)
+            }else {
+                requestCreatePostVote(id, 1, getPosts)
+
+                setIsUpVoted(true)
+            }
+        }else {
+            if (isUpVoted) {
+                requestChangePostVote(id, -1, getPosts)
+
+                setIsDownVoted(true)
+                setIsUpVoted(false)
+            }else {
+                requestCreatePostVote(id, -1, getPosts)
+
+                setIsDownVoted(true)
+            }
+        }
+    }
+
+    const removeVote = (typeVote) =>{
+        requestDeletePostVote(id, getPosts)
+
+        typeVote === "up" ? setIsUpVoted(false) : setIsDownVoted(false)
+    }
+
+    const showVoteButtons = props.isFeed && (
+        <>
+            {userVote && isDownVoted ?
+            <button onClick={() => removeVote("down")}> Remover voto "Não Gostei"</button>    
+            : <button onClick={() => chooseVote ("down")}>
+                {isUpVoted ? `Mudar voto para "Não Gostei"` : `Votar em "Não Gostei"`}
+            </button>    
+        }
+        <br />
+            {userVote && isUpVoted ?
+                <button onClick={() => removeVote("up")}> Remover voto " Gostei"</button>    
+                : <button onClick={() => chooseVote ("up")}>
+                    {isDownVoted ? `Mudar voto para " Gostei"` : `Votar em " Gostei"`}
+                </button>    
+        }   
+        
+        </>
+    )
 
     return (
         <article>
@@ -33,9 +97,7 @@ const PostCard = (props) => {
             <p><b>Descrição: </b>{body}</p>
 
             <p>Votos: {voteSum ? voteSum: 0}</p>
-            <button>Votar em "não gostei</button>
-            <br />
-            <button>Votar em Gostei"</button>
+                {showVoteButtons}
 
             <p>Comentários: {commentCount ? commentCount: 0}</p>
             
