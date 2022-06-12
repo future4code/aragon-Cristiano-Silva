@@ -24,6 +24,12 @@ const Section = styled.section `
       transition: .6s ease-in-out;
       transform: scale(1.2);      
     }
+
+    @media (max-width:850px) {
+        display: flex;
+        flex-direction: column;
+        width: 23rem;
+    }
     
 
     form {
@@ -32,6 +38,12 @@ const Section = styled.section `
     align-items: center;
     height: 50%;
     width: 50%;
+
+    @media (max-width:850px) {
+        display: flex;
+        flex-direction: column;
+        width: 23rem;
+    }
     }
     button{
       margin: 6px;
@@ -46,10 +58,16 @@ const Section = styled.section `
 const Button = styled.button `
 
     width: 10rem;
+    height: 2.5rem;
     float: right;
     margin-top:-4.5rem ;
-    transform: translateX(-40%)
+    transform: translateX(-40%);
 
+    @media (max-width:850px) {
+      margin: auto;
+      margin-right: 6rem;
+        
+    } 
 
 `
 

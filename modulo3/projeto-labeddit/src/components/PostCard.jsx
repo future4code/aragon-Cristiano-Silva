@@ -9,6 +9,19 @@ import styled from 'styled-components'
 const Button = styled.button`
     width: 10vw;
     text-align:center;
+
+    @media (max-width:850px) {
+        width: 20vw;
+        height: 3rem;
+        
+    }
+`
+
+const Article =styled.article`
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 `
 
 
@@ -95,7 +108,7 @@ const PostCard = (props) => {
     )
 
     return (
-        <article>
+        <Article>
             <h3>{title}</h3>
             <span><b>Autor: </b>{userId}</span>
             <p>Criado em {date}</p>
@@ -110,7 +123,7 @@ const PostCard = (props) => {
             
             {props.isFeed && <Button onClick={goToComments}>Ver comentários</Button>}
             <hr />
-        </article>
+        </Article>
     )
 
 }

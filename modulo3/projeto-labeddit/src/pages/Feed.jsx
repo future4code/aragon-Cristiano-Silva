@@ -18,13 +18,21 @@ const Section = styled.section`
     margin: auto;
     border-radius: 5px;
     
-
     &:hover{
       
       cursor: pointer;
       transition: .6s ease-in-out;
       transform: scale(1.2);      
     }
+    @media (max-width:850px) {
+        display: flex;
+        flex-direction: column;
+        width: 23rem;
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+       
+    }
+    
 
     form {
     display: flex;
@@ -32,6 +40,13 @@ const Section = styled.section`
     align-items: center;
     height: 50%;
     width: 50%;
+
+    @media (max-width:850px) {
+        display: flex;
+        flex-direction: column;
+        width: 23rem;
+      
+    }
     }
 
     article{
@@ -41,15 +56,35 @@ const Section = styled.section`
         margin: 5px;
     }
 
+    section{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+    
+
 `
 const Button = styled.button`
     width: 10vw;
+
+    @media (max-width:850px) {
+       width: 16vw;
+       height: 5vh;
+    }
 
 `
 const Section1 = styled.section`
   display: inline-flex;
   column-gap: 25px;
   margin: 25px;
+`
+const Section2 = styled.section`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
 `
 
 
@@ -132,7 +167,7 @@ const Feed = () => {
         </form>
       </Section>
      {/*  <hr /> */}
-     <section>
+     <Section2>
       <h2>Lista de Posts</h2>
           <nav>
            {/*  <h2>Selecione uma página</h2> */}
@@ -145,7 +180,7 @@ const Feed = () => {
             }
           </nav>
           {/* <hr /> */}
-     </section>
+     </Section2>
     
       <Section1>
       

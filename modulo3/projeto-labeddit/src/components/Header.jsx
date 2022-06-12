@@ -9,16 +9,30 @@ const HeaderGeral = styled.header`
     background-color: #1F2833;
     color: #66FCF1;
 
+    @media (max-width:850px) {
+        display: flex;
+        flex-direction: column;
+        margin-top: 5rem;
+    }
+
     button{
         height: 2rem;
         margin: 2rem;
         width: 10vw;
+
+        @media (max-width:850px) {
+        width: 10rem;
+    }
         
     }
 
     h1{
         margin-left: 2rem;
         font-size:3rem;
+
+        @media (max-width:850px) {
+            font-size:5rem;
+    }
     }
 `
 
