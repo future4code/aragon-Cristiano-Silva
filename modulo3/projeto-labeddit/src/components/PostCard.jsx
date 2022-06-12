@@ -4,6 +4,13 @@ import { useNavigate } from 'react-router-dom'
 import GlobalStateContext from '../global/GlobalStateContext'
 import { goToPost } from "../routes/coordinator"
 import { requestChangePostVote, requestCreatePostVote, requestDeletePostVote } from '../services/requests'
+import styled from 'styled-components'
+
+const Button = styled.button`
+    width: 10vw;
+    text-align:center;
+`
+
 
 
 const PostCard = (props) => {
@@ -71,17 +78,17 @@ const PostCard = (props) => {
     const showVoteButtons = props.isFeed && (
         <>
             {userVote && isDownVoted ?
-            <button onClick={() => removeVote("down")}> Remover voto "Não Gostei"</button>    
-            : <button onClick={() => chooseVote ("down")}>
+            <Button onClick={() => removeVote("down")}> Remover voto "Não Gostei"</Button>    
+            : <Button onClick={() => chooseVote ("down")}>
                 {isUpVoted ? `Mudar voto para "Não Gostei"` : `Votar em "Não Gostei"`}
-            </button>    
+            </Button>    
         }
         <br />
             {userVote && isUpVoted ?
-                <button onClick={() => removeVote("up")}> Remover voto " Gostei"</button>    
-                : <button onClick={() => chooseVote ("up")}>
+                <Button onClick={() => removeVote("up")}> Remover voto " Gostei"</Button>    
+                : <Button onClick={() => chooseVote ("up")}>
                     {isDownVoted ? `Mudar voto para " Gostei"` : `Votar em " Gostei"`}
-                </button>    
+                </Button>    
         }   
         
         </>
@@ -101,7 +108,7 @@ const PostCard = (props) => {
 
             <p>Comentários: {commentCount ? commentCount: 0}</p>
             
-            {props.isFeed && <button onClick={goToComments}>Ver comentários</button>}
+            {props.isFeed && <Button onClick={goToComments}>Ver comentários</Button>}
             <hr />
         </article>
     )

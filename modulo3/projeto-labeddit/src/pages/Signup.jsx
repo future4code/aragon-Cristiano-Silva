@@ -4,6 +4,46 @@ import useUnprotectedPage from "../hooks/useUnprotectedPage"
 import { goToLogin } from "../routes/coordinator"
 import  useForm  from "../hooks/useForm"
 import { requestSignUp } from "../services/requests"
+import styled from "styled-components"
+
+const Section = styled.section `
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px;
+    width: 50%;
+    margin: auto;
+    height: 50%;
+    margin-top: 8rem;
+    border-radius: 5px;
+
+    &:hover{
+      
+      /* cursor: pointer; */
+      transition: .6s ease-in-out;
+      transform: scale(1.2);      
+    }
+
+    form {
+    display: flex;
+    flex-direction: column;
+    }
+    button{
+      margin: 6px;
+      
+    }
+    h2{
+      font-size: 2rem;
+    }
+`
+const Button =styled.button`
+  width: 6rem;
+  float: right;
+  margin-top:-4.5rem ;
+  transform: translateX(-40%)
+`
 
 
 const Signup = () => {
@@ -24,8 +64,9 @@ const Signup = () => {
       <Header
         isProtected={false}
       />
-      <hr />
-      <section>
+      <Button onClick={() => goToLogin(navigate)}>Voltar</Button>
+      {/* <hr /> */}
+      <Section>
         <h2>Cadastro de novo Usuário </h2>
         <form onSubmit={signup}> 
           <label htmlFor={"name"}>Nome:</label>
@@ -37,6 +78,7 @@ const Signup = () => {
           pattern={"^.{3,}$"} 
           title={"O nome deve ter no mínimo 3 caracteres"}
           required
+          placeholder="Digite seu nome"
         />
         <br />
         <label htmlFor={"email"}>Email:</label>
@@ -47,6 +89,7 @@ const Signup = () => {
           value={form.email}
           onChange={onChange}
           required
+          placeholder="Digite seu e-mail"
         />
         <br />
         <label htmlFor={"password"}>Senha:</label>
@@ -59,12 +102,12 @@ const Signup = () => {
           pattern={"^.{8,30}$"}
           title={"O nome deve ter no mínimo 8 e no máximo 30 caracteres"}
           required
+          placeholder="Digite sua Senha"
         />
         <br />
         <button type={"submit"}>Cadastrar Usuário</button>
         </form>
-        <button onClick={() => goToLogin(navigate)}>Voltar</button>
-      </section>
+      </Section>
 
 
     </main>

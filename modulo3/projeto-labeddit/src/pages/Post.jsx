@@ -8,7 +8,43 @@ import Commented from "../components/Commented"
 import useForm from "../hooks/useForm"
 import PostCard from "../components/PostCard"
 import {requestCreateComment} from "../services/requests"
+import styled from "styled-components"
 
+const Section = styled.section `
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    height: 50%;
+    width: 50%;
+    }
+    img{
+      width: 30vw;
+      height: 45vh;
+    }
+    button{
+      width: 14vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+    }
+   
+
+`
+const Button = styled.button `
+  width: 10vw;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+`
 
 
 const Post = () => {
@@ -58,17 +94,17 @@ const Post = () => {
         isProtected={true}
       />
       <hr />
-      <button onClick={() => navigate(-1)}>Voltar</button>
-      <section>
+      <Button onClick={() => navigate(-1)}>Voltar</Button>
+      <Section>
         <h2>Informações do Post</h2>
         <PostCard
         key={post.id}
         post={post}
         isFeed={false}
         />
-      </section>
+      </Section>
       <hr />
-      <section>
+      <Section>
         <h2>Escreva seu comentário</h2>
         <form onSubmit={createComment}>
           <label htmlFor={"body"}>Comentário</label>
@@ -86,12 +122,12 @@ const Post = () => {
           <br />
           <button type={"submit"}>Criar Post</button>
         </form>
-      </section>
+      </Section>
       <hr />
-      <section>
+      <Section>
         <h2>Lista de Comentários</h2>
         {showComments}
-      </section>
+      </Section>
     </main>
     
   )

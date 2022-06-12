@@ -5,7 +5,52 @@ import useProtectedPage from "../hooks/useProtectedPage"
 import { requestCreatePost } from "../services/requests"
 import PostCard from "../components/PostCard"
 import GlobalStateContext from "../global/GlobalStateContext"
+import styled from "styled-components"
 
+const Section = styled.section`
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border: solid 1px;
+    width: 50%;
+    height: 50%;
+    margin: auto;
+    border-radius: 5px;
+    
+
+    &:hover{
+      
+      cursor: pointer;
+      transition: .6s ease-in-out;
+      transform: scale(1.2);      
+    }
+
+    form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 50%;
+    width: 50%;
+    }
+
+    article{
+        width: 25%;
+        height: 150px;
+        display: inline;
+        margin: 5px;
+    }
+
+`
+const Button = styled.button`
+    width: 10vw;
+
+`
+const Section1 = styled.section`
+  display: inline-flex;
+  column-gap: 25px;
+  margin: 25px;
+`
 
 
 const Feed = () => {
@@ -13,20 +58,29 @@ const Feed = () => {
   useProtectedPage() 
 
   const {form, onChange, clear} = useForm({title: "", body:""}) 
-  const { states, getters } = useContext(GlobalStateContext);
+  const {states, setters, getters } = useContext(GlobalStateContext);
 
-  const {posts} = states
+  const {posts, page, isLoading} = states
+
+  const { setPage } = setters
 
   const {getPosts} = getters
 
     useEffect(() => {
-      getPosts();
+      getPosts(page);
   }, []);
 
   const createPost = (e) =>{
     e.preventDefault()
 
     requestCreatePost(form, clear, getPosts)
+  }
+
+  const changePage = (sum) =>{
+    const nextPage = page + sum
+
+    setPage(nextPage)
+    getPosts(nextPage)
   }
 
   const showPosts = posts.length && posts.map((post) =>{
@@ -47,8 +101,8 @@ const Feed = () => {
       <Header 
         isProtected={true}
       />
-      <hr />
-      <section>
+      {/* <hr /> */}
+      <Section>
         <h2>Crie um novo Post</h2>
         <form onSubmit={createPost}>
           <label htmlFor={"title"}>Título:</label>
@@ -76,12 +130,29 @@ const Feed = () => {
           <br />
           <button type={"submit"}>Criar Post</button>
         </form>
-      </section>
-      <hr />
-      <section>
-        <h2>Lista de Posts</h2>
-        {showPosts}
-      </section>
+      </Section>
+     {/*  <hr /> */}
+     <section>
+      <h2>Lista de Posts</h2>
+          <nav>
+           {/*  <h2>Selecione uma página</h2> */}
+            {page !==1 &&
+              <Button onClick={() => changePage(-1)}> Voltar página</Button>
+            }
+            <span>Página {page}</span>
+            {posts.length &&
+              <Button onClick={() => changePage(1)}>Próxima página</Button>
+            }
+          </nav>
+          {/* <hr /> */}
+     </section>
+    
+      <Section1>
+      
+        {isLoading ? <p>Carregando...</p> : showPosts}
+
+        
+      </Section1>
     </main>
   )  
 }

@@ -1,12 +1,65 @@
 import Router from "./routes/Router";
 import GlobalState from "./global/GlobalState";
+import { createGlobalStyle } from "styled-components"
+ import Button from "@mui/material/Button"; 
+
+
+
+
+const GlobalStyle = createGlobalStyle `
+
+  body{
+    margin:0;
+    padding:0;
+    background-color: #1F2833;
+    color: #66FCF1;
+  }
+
+  input, label{
+    border-radius: 5px;
+    height:1.5rem;
+    width:15rem;
+    margin:auto;
+  }
+  button{
+    border-radius: 5px;
+    height:1.8rem;
+    width:18rem;
+    background-color:#66FCF1;
+
+
+    &:hover{
+      
+      background-color:#51b7dc;
+      color: white;
+      cursor: pointer;
+      transition: .3s ease-in-out;
+      
+  }
+  }
+
+
+`
 
 function App() {
   return (
-   
+
+   <>
+      <GlobalStyle>
+        <Button variant="contained" color="primary"></Button>  
+      </GlobalStyle>     
+
       <GlobalState>
         <Router />
       </GlobalState>
+
+  {/*     <Button variant="contained" color="primary">
+         Hello World
+      </Button> */}
+    
+   </>
+
+    
     
     
   );
