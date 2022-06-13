@@ -18,25 +18,28 @@ const GlobalStyle = createGlobalStyle `
   input, label{
     border-radius: 5px;
     height:1.5rem;
-    width:15rem;
+    width:90%;
     margin:auto;
+    position:relative;
   }
   button{
     border-radius: 5px;
     height:1.8rem;
     width:18rem;
-    background-color:#66FCF1;
+    background: linear-gradient(to left, #21d4fd, #b721ff);
+
 
 
     &:hover{
       
-      background-color:#51b7dc;
+      background: linear-gradient(to left, #b721ff, #21d4fd );
       color: white;
       cursor: pointer;
       transition: .3s ease-in-out;
       
   }
   }
+
 
 
 `

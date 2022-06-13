@@ -52,6 +52,21 @@ const Section = styled.section `
     h2{
       font-size: 2rem;
     }
+   input{
+    border-bottom :2px solid;
+    background: transparent;
+    border: none;
+    
+    font-size: 15px;
+    height: 45px;
+    line-height: 1.2;
+    padding: 0.5px;
+
+    border-bottom: 2px solid  #66FCF1;
+    margin-bottom: 20px;
+    position: relative;
+    width: 90%;
+   }
 
 `
 

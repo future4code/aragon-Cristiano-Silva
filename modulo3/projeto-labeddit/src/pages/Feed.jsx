@@ -75,9 +75,15 @@ const Button = styled.button`
 
 `
 const Section1 = styled.section`
-  display: inline-flex;
-  column-gap: 25px;
-  margin: 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
+    grid-template-rows: 1fr 1fr;
+
+    @media (max-width:850px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr  ;
+      grid-template-rows: 1fr 1fr;
+      }
 `
 const Section2 = styled.section`
     display: flex;

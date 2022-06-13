@@ -38,12 +38,28 @@ const Section = styled.section `
     flex-direction: column;
     }
     button{
-      margin: 6px;
+      margin: 1.5rem;
       
     }
     h2{
       font-size: 2rem;
     }
+
+    input{
+    border-bottom :2px solid #fff ;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 15px;
+    height: 45px;
+    line-height: 1.2;
+    padding: 0.5px;
+
+    border-bottom: 2px solid  #66FCF1;
+    margin-bottom: 20px;
+    position: relative;
+    width: 90%;
+   }
 `
 const Button =styled.button`
   width: 10rem;

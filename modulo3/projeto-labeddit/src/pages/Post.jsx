@@ -26,6 +26,10 @@ const Section = styled.section `
     img{
       width: 30vw;
       height: 45vh;
+
+      @media (max-width:850px) {
+        width: 90vw;
+      }
     }
     button{
       width: 14vw;
@@ -33,6 +37,11 @@ const Section = styled.section `
       align-items: center;
       justify-content: center;
       margin: auto;
+
+      @media (max-width:850px) {
+        width: 20vw;
+        height: 5vh
+      }
     }
    
 
@@ -123,7 +132,7 @@ const Post = () => {
           <button type={"submit"}>Criar Post</button>
         </form>
       </Section>
-      <hr />
+     {/*  <hr /> */}
       <Section>
         <h2>Lista de Comentários</h2>
         {showComments}
