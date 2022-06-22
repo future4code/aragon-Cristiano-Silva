@@ -1,0 +1,37 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.App {
+    display: flex;
+    border: 1.5px solid chartreuse;
+    height: 400px;
+    width: 430px;
+    margin: auto;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    margin-top:160px;
+    color: white;
+    background-color: blueviolet;
+    
+}
+
+.cadastro{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    justify-content: center;
+    margin: auto;
+}
+
+.cadastro button {
+    margin-top: 15px;
+    height: 25px;
+}
+
+.cadastro input {
+    height: 30px;
+}
