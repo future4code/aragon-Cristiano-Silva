@@ -18,9 +18,6 @@ let segundaLista= [
     { nome: "Banana"} ,
     { nome: "Maça"} ,
     { nome: "Laranja"} ,
-
-
-	
 ]
 let result = primeiraLista.concat(segundaLista)
 let reduced =[]
