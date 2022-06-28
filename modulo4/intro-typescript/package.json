@@ -1,0 +1,20 @@
+{
+  "name": "intro-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc && node ./build/exercicio01.js",
+    "ex02" : "tsc && node ./build/exercicio02.js",
+    "ex03" : "tsc && node ./build/exercicio03.js",
+    "ex04" : "tsc && node ./build/exercicio04.js",
+    "ex05" : "tsc && node ./build/exercicio05.js"
+  },
+  "keywords": [],
+  "author": "Cristiano Silva",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^18.0.0"
+  }
+}
