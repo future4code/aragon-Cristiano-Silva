@@ -12,7 +12,12 @@
     "ex04": "tsc && node ./build/exercicio04/exercicio04.js",
     "ex05": "tsc && node ./build/exercicio05/exercicio05.js",
     "ex06": "tsc && node ./build/exercicio06/exercicio06.js",
-    "ex07": "tsc && node ./build/exercicio07/exercicio07.js"
+    "ex07": "tsc && node ./build/exercicio07/exercicio07.js",
+    "ex08": "tsc && node ./build/exercicio08/exercicio08.js",
+    "ex09": "tsc && node ./build/exercicio09/exercicio09.js"
+
+
+
 
   },
   "keywords": [],
