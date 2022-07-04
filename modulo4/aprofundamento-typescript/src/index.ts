@@ -1,0 +1,1 @@
+console.log("Aprofundamento em Typescript com resolução dos exercícios propostos.")
