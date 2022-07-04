@@ -1,10 +1,9 @@
-
-type dadosDosClientes ={
+type DadosDosClientes ={
     nome: string,
     quantidade:number,
-    valorUnitario:number
+    valorUnitario:number | string
 }
-
+const listaEstoque: DadosDosClientes[]=
 [
 	{ nome: "MacMugffin", quantidade: 37, valorUnitario: 51.040},
 	{ nome: "Vassoura voadora", quantidade: 56, valorUnitario: 210.0},
@@ -19,3 +18,18 @@ const ajustaPreco = (preco :number): string => {
 	const valorAjustado: string = preco.toFixed(2).replace('.', ',')
 	return "R$ "+valorAjustado
 }
+
+
+ const estoque = (listaEstoque: DadosDosClientes[]):DadosDosClientes[] =>{
+	const valores = listaEstoque.map(
+		(valor) =>{
+			valor.valorUnitario = ajustaPreco(valor.valorUnitario as number)
+			return valor
+		}
+		
+	).sort((a,b) => a.quantidade - b.quantidade)
+	return valores
+}
+console.log(estoque(listaEstoque))
+ 
+
