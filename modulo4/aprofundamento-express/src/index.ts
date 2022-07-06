@@ -1,6 +1,5 @@
 import express, { Request, Response } from "express"
 import cors from "cors"
-import { send } from "process"
 
 type Lista = {
     id:number,
@@ -114,39 +113,24 @@ app.delete("/afazer/:id", (req:Request, res:Response) =>{
 })
 
 //Put- Editar status do endpoint
-app.put("/afazer/:id",(req:Request, res:Response) =>{
+app.put("/afazeres/:id",(req:Request, res:Response) =>{
     const id = Number(req.params.id)
-    const {complemeted} = req.body
 
-  /*   if(!id) res.status(400).send({message:`Insert a valid ID`})
-    else {
-      const updateUserList = afazeres.map(element => {
-        if (element.id === id) return {...element, complemeted:!complemeted}
-      })
-      afazeres = updateUserList
-  
-      const updateUser = afazeres.filter(element => element.id === id)
-      res.status(200).send({message:`User changed with success!`, user:updateUser})
-    }
-  }) */
+    const index = afazeres.map((element) =>{
+        return element.id === id 
+    })
 
-   /*  .send({
-        message:"Status alterado com sucesso!"
-    }) */
-
-
-     const resultado = afazeres.map((afazer) =>{
-        if(afazer.complemeted === true){
-            return afazer.complemeted 
-        }else if (afazer.complemeted === false){
-            return afazer.complemeted
-        }
-        res.send({
-            mensage: "Status alterado com sucesso!",
-            afazers: resultado
+    if (index){
+        const result = afazeres.filter((afazer ) =>{
+            return afazer.complemeted = !afazer.complemeted
+        })
+        return res.send({
+            afazeres: result
             
         })
-    }) 
+    }
+
+
 })
 
 
