@@ -1,22 +1,22 @@
 export type List ={
-    id: string | number,
+    id:  number,
     name: string,
     price: number,
 }
 
 export let products: List[] =[
     {
-        id:"1",
+        id:1,
         name:"Leite",
         price:10.09
     },
     {
-        id:"2",
+        id:2,
         name:"Feijão",
         price: 12.00
     },
     {
-        id:"3",
+        id:3,
         name:"arroz",
         price:8.99
     },

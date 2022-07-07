@@ -9,7 +9,7 @@ app.use(express.json())
 
 app.get("/test", (req:Request, res:Response) =>{
     try {
-        res.status(200).send({message:"Api rodando liso."})
+        res.status(200).send({message:"Api funcionando!."})
     } catch (error) {
         res.status(500).send({mensage: error.message})
     }    
@@ -50,7 +50,7 @@ app.post("/create/:id", (req:Request, res:Response) =>{
 app.put("/edit/:id",(req:Request, res:Response) =>{
     try {
         const {price} =req.body 
-        const {id} = req.params
+        const id = Number(req.params.id)
         
         const result= products.map((prod) =>{
             if(prod.id === id) {
@@ -63,7 +63,7 @@ app.put("/edit/:id",(req:Request, res:Response) =>{
             res.statusCode = 404
             throw new Error("Erro: valor do 'price', deve ser maior que 0 ");            
         }
-        if(id === ""){
+        if(id !== id){
             res.statusCode = 404
             throw new Error("Erro: faltando passar a informação da 'id'");            
         }       
@@ -78,15 +78,17 @@ app.put("/edit/:id",(req:Request, res:Response) =>{
 app.delete("/product/:id",(req:Request, res:Response) =>{
     const id= Number(req.params.id)
 
-    const search = products.findIndex((element) => {
-        return element.id === id
+    const search = products.findIndex((product) => {
+        return product.id === id
     })
 
     if (search === -1){
-        return res.status(200).send({message:"Produto deletado com sucesso!",id:id} )
+        return res.status(200).send({message:"Produto não encontrado!",id:id} )
     }
 
     products.splice(search,1)
+
+    res.send({message:"Produto deletado com sucesso!", products:products})
 
 
 })
