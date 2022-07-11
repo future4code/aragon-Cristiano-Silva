@@ -9,7 +9,7 @@ export type List ={
     name:string,
     cpf:string,
     birthDate:string,
-    avaliable:any,
+    totalBalance:any,
     list:AccountPay[]
     
 }
@@ -20,7 +20,7 @@ export let account: List[] =[
         name: "Criz",
         cpf: "111111111-11",
         birthDate: "16/07/87",
-        avaliable: 3000,
+        totalBalance: 3000,
         list:[
             {
                 valueAccount:100,
@@ -34,7 +34,7 @@ export let account: List[] =[
         name: "Astrodev",
         cpf: "222222222-11",
         birthDate: "15/09/88",
-        avaliable:2300,
+        totalBalance:2300,
         list:[
             {
                 valueAccount:200,
@@ -49,7 +49,7 @@ export let account: List[] =[
         name: "Laura",
         cpf: "333.333.333-11",
         birthDate: "25/12/92",
-        avaliable:1360,
+        totalBalance:1360,
         list:[
             {
                 valueAccount:19.99,
