@@ -6,7 +6,7 @@ POST http://localhost:3003/perfumes
 Content-Type: application/json
 
 {
-    "name": "Ferrari Black",
+    "name": "Ferrari ",
     "brand": "Masculino",
     "price": 250.00,
     "ml": 100
@@ -16,7 +16,7 @@ Content-Type: application/json
 GET http://localhost:3003/perfumes
 
 ### Put edit Perfumes
-PUT http://localhost:3003/perfumes/01
+PUT http://localhost:3003/perfumes/03
 Content-Type:  application/json
 
 {
