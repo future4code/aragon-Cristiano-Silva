@@ -13,6 +13,7 @@ GET http://localhost:3003/users?q=user&sort=role&order=asc
 ### Create user NORMAL
 POST http://localhost:3003/users
 Content-Type: application/json
+
 {
     "email": "testenormal@gmail.com",
     "password": "teste123",
@@ -39,8 +40,9 @@ GET http://localhost:3003/products?q=celular
 
 
 ### Create product
-POST http://localhost:3003/products/:id
+POST http://localhost:3003/products
 Content-Type: application/json
+
 {
     "name": "Test new product",
     "price": 223.33
@@ -53,6 +55,7 @@ Content-Type:  application/json
 ### Put product
 PUT http://localhost:3003/products/product2
 Content-Type: application/json
+
 {
     "price": 8787.22
 }

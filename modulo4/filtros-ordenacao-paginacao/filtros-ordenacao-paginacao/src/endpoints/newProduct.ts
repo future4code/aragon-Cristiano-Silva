@@ -12,7 +12,7 @@ export const newProduct = async (req: Request, res: Response) =>{
        const price = Number(req.body.price)
 
        const newProd = {
-        id: Date.now(),
+        id: Date.now().toString(),
         name: name,
         price: price
        }
