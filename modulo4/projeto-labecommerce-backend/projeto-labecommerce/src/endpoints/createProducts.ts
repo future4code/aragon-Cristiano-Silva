@@ -11,6 +11,25 @@ export const createProducts = async(req:Request, res:Response)=>{
         const name = req.body.name
         const price = Number(req.body.price)
 
+        if(!name || !price){
+            throw new Error("missing name or price parameters");            
+        }
+
+        if (typeof name !== "string") {
+            errorCode = 422
+            throw new Error("parameter name must be string")
+        }
+
+        if (typeof price !== "number") {
+            errorCode = 422
+            throw new Error("parameter price must be string or number")
+        }
+
+        if (price <= 0) {
+            errorCode = 422
+            throw new Error("price parameter must be greater than zero")
+        }
+
         const newProduct : Product ={
             id: Date.now().toString(),
             name: name,

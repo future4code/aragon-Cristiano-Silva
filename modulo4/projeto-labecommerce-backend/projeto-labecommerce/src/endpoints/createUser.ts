@@ -12,6 +12,22 @@ export const createUser = async (req:Request, res:Response)=>{
         const email = req.body.email
         const password = req.body.password
 
+        if (!email || !password) {
+            throw new Error("email and password parameters must be filled")
+        }
+
+        if (typeof email !== "string") {
+            errorCode = 422
+            throw new Error("parameter email must be string")
+        }
+
+        if (typeof password !== "string") {
+            errorCode = 422
+            throw new Error("parameter password must be string")
+        }
+        
+
+
         const newUser: User ={
             id: Date.now().toString(),
             email:email,

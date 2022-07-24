@@ -9,12 +9,10 @@ export const addPurchase = async(req:Request, res:Response) =>{
     let errorCode = 400
 
     try {
-
-        const id = req.params.id 
         const user_id = req.body
         const product_id = req.body
         const quantity = req.body
-        const total_price = req.body
+        const total_price = req.body        
 
 
         const newPurchase : Purchase ={
@@ -34,7 +32,7 @@ export const addPurchase = async(req:Request, res:Response) =>{
                 total_price: newPurchase.total_price
             })
 
-            res.status(201).send({message:"new purchase successfully!"})
+            res.status(201).send({message:"new purchase successfully!", purchase: newPurchase})
         
         
     } catch (error) {
