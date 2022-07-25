@@ -1,6 +1,6 @@
 --------------------------------PROJETO LABECOMMERCE BACK-END------------------------------------------
 
-DOCUMENTATION POSTMAN ->
+DOCUMENTATION POSTMAN -> https://documenter.getpostman.com/view/15488606/UzXKXejn
 
 
 | Endpoint metódo POST - Cadastro de usuário - passando os endPoints id, email e password
@@ -54,6 +54,22 @@ DOCUMENTATION POSTMAN ->
         "price": 435
     }
 }
+
+
+| Endpoint Post - Registro de compra de um novo produto
+
+
+{
+    "message": "new purchase successfully!",
+    "purchase": {
+        "id": "1658713344299",
+        "user_id": "103",
+        "product_id": "203",
+        "quantity": 4,
+        "total_price": 1839.96
+    }
+}
+
 
 | Endpoint metódo GET - Busca Histórico de compras de usuário detalhando nome,email,price do produto, quantidade e total da compra.
 
