@@ -1,0 +1,39 @@
+### Endpoint de teste
+GET http://localhost:3003/ping
+
+### Endpoint criando novo usuário
+POST http://localhost:3003/users
+Content-Type: application/json 
+
+{
+    "email": "criz@email.com",
+    "password": "criz123456"
+}
+
+### Endpoint listar usuários
+GET http://localhost:3003/users
+
+### Endpoins criando novo produto
+POST http://localhost:3003/products
+Content-Type: application/json 
+
+{
+    "name" : "iphone 11",
+    "price": 3299.99
+}
+
+### Endpoint listar Produtos
+GET http://localhost:3003/products
+
+### Endpoint listar compras por usuário
+GET http://localhost:3003/users/101/purchases
+
+### Endpoins realizando compra de um novo produto
+POST http://localhost:3003/purchases
+Content-Type: application/json 
+
+{
+    "user_id": "104",
+    "product_id": "204",
+    "quantity": 5
+}
