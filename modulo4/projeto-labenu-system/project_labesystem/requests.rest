@@ -18,8 +18,8 @@ Post http://localhost:3003/students
 Content-Type: application/json
 
 {
-    "name": "newStudent1",
-    "email": "newStudent1@email.com",
+    "name": "newStudent3",
+    "email": "newStudent3@email.com",
     "birthdate": "2000/10/02",
     "classroom_id": "102"
 }

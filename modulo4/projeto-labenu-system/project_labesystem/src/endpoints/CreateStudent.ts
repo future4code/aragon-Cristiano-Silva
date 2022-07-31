@@ -12,6 +12,22 @@ export class CreateStudent{
         const birthdate = req.body.birthdate
         const classroom_id = req.body.student_id
 
+        if (!name || !email ) {
+            errorCode = 422
+            throw new Error("Body inválido.")
+        }
+
+        if (typeof name != "string") {
+            errorCode = 422
+            throw new Error("Incorrect past parameters.")
+        }
+
+        if (typeof email != "string") {
+            errorCode = 422
+            throw new Error("Incorrect past parameters.")
+        }
+
+       
         const student :  IStudentDB ={
             id: Date.now().toString(),
             name,

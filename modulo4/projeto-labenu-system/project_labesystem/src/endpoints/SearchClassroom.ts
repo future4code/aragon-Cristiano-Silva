@@ -8,6 +8,10 @@ export class SearchClassroom {
         try {
             const searchModule = req.body.module
 
+            if (!module) {
+                throw new Error("Body inválido.")
+            }
+
             const searchClass = new ClassroomDatabase()
             const result = await searchClass.searchClassrooms(searchModule)
  
