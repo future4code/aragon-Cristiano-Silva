@@ -2,7 +2,6 @@
 
 Projeto ira representar o básico de uma organização educacional.
 
-
 ## Apêndice
 
 Sistema permitirá o registro, acesso e manipulação de participantes ativos de um ambiente educacional (estudantes e turmas)
