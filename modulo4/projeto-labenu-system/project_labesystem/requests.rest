@@ -1,0 +1,60 @@
+### Endpoint de teste
+GET http://localhost:3003/ping
+
+### Exercício 0
+GET http://localhost:3003/classrooms
+
+### Endpoint Post CreateClassrooms
+POST http://localhost:3003/classrooms
+Content-type: application/json
+
+{
+    "name": "NewClassrom",
+    "module": "3"
+}
+
+### Endpoint Post CreateStudents
+Post http://localhost:3003/students 
+Content-Type: application/json
+
+{
+    "name": "newStudent3",
+    "email": "newStudent3@email.com",
+    "birthdate": "2000/10/02",
+    "classroom_id": "102"
+}
+
+### Endpoint Get StudentsByName
+GET http://localhost:3003/students
+Content-Type: application/json
+
+{
+    "name" :"criz"
+}
+
+###Endpoint Get Classrooms Actives
+GET http://localhost:3003/classrooms/actives
+
+###Endpoint Put update classrooms
+PUT http://localhost:3003/classrooms/101
+Content-Type: application/json
+
+{
+    "module" : "6"
+}
+
+### Endpoint Put update Registration Classrroms
+PUT http://localhost:3003/students/201
+Content-Type: application/json
+
+{
+    "classroom_id" : "102"
+}
+
+### Endpoint Get classrooms for students
+GET http://localhost:3003/students/classroomId
+Content-Type: application/json
+
+{
+    "classroom_id" : "102"
+}
