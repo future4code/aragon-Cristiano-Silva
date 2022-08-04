@@ -1,0 +1,58 @@
+### Endpoint de teste
+GET http://localhost:3003/ping
+
+### Signup
+POST http://localhost:3003/users/signup
+Content-Type: application/json
+
+{
+    "nickname": "criz1",
+    "email": "criz1@gmail.com",
+    "password": "bananinha"
+}
+
+### Login
+POST http://localhost:3003/users/login
+Content-Type: application/json
+
+{
+    "email": "astrodev@gmail.com",
+    "password": "bananinha"
+}
+
+### Delete user
+DELETE http://localhost:3003/users/ac9addc1-fc99-482a-bdc0-6d9490c05a7c
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJiOWI3ZWU4LWFlNGItNGJkMS05YmQ2LWU3ZTIxNTk0Mzk5YiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY1OTYyMTg3NiwiZXhwIjoxNjU5NzA4Mjc2fQ.GMtyKRjOtkDtoH_OgnVs_sFNaS9yPY2MA1cHiBfb5N8
+
+### Get all users (protected)
+GET http://localhost:3003/users?search=criz
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJiOWI3ZWU4LWFlNGItNGJkMS05YmQ2LWU3ZTIxNTk0Mzk5YiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY1OTYyMTg3NiwiZXhwIjoxNjU5NzA4Mjc2fQ.GMtyKRjOtkDtoH_OgnVs_sFNaS9yPY2MA1cHiBfb5N8
+
+### Post new recipes
+POST http://localhost:3003/recipes/created
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJiOWI3ZWU4LWFlNGItNGJkMS05YmQ2LWU3ZTIxNTk0Mzk5YiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY1OTYyMTg3NiwiZXhwIjoxNjU5NzA4Mjc2fQ.GMtyKRjOtkDtoH_OgnVs_sFNaS9yPY2MA1cHiBfb5N8
+Content-Type: application/json
+
+{
+    "title": "Lasanha",
+    "description":"Lasanha é tanto um tipo de massa em folhas",
+    "creator_id": "b9f308d2-cfd4-4db0-88e6-5cc724bed74f"
+}
+
+### Put edit title and description of Recipes
+PUT http://localhost:3003/recipes/1659549870047
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImI5ZjMwOGQyLWNmZDQtNGRiMC04OGU2LTVjYzcyNGJlZDc0ZiIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NTk2NDY4ODgsImV4cCI6MTY1OTczMzI4OH0.bMjRoAIWb1lUHQrQXJvIEAd2M1GqOtCD76DcXyrqwjM
+Content-Type: application/json
+
+{
+    "title" : "Lasanha gigante",
+    "description": "Lasanha tamanho familia no almoço de domingo"
+}
+
+### Delete Recipe
+DELETE http://localhost:3003/recipes/1659549870047
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJiOWI3ZWU4LWFlNGItNGJkMS05YmQ2LWU3ZTIxNTk0Mzk5YiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY1OTY0NzEzMywiZXhwIjoxNjU5NzMzNTMzfQ.PXGSdx0GUsleAkT5ilHVRJHTVagbkzwytfw8KD5u3bA
+
+### Get all recipes
+GET http://localhost:3003/recipes?search=Lasanha
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJiOWI3ZWU4LWFlNGItNGJkMS05YmQ2LWU3ZTIxNTk0Mzk5YiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY1OTYyMTg3NiwiZXhwIjoxNjU5NzA4Mjc2fQ.GMtyKRjOtkDtoH_OgnVs_sFNaS9yPY2MA1cHiBfb5N8
