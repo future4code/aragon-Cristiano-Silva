@@ -13,7 +13,7 @@ https://documenter.getpostman.com/view/15488606/VUjJs7xB
 
 ## Link de acesso Heroku
 
-
+https://project-cookenu.herokuapp.com/ping
 
 ## Stacks
 

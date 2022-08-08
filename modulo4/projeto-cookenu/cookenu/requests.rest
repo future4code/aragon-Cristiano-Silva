@@ -6,8 +6,8 @@ POST http://localhost:3003/users/signup
 Content-Type: application/json
 
 {
-    "nickname": "criz1",
-    "email": "criz1@gmail.com",
+    "nickname": "crizz",
+    "email": "crizz@gmail.com",
     "password": "bananinha"
 }
 
@@ -22,11 +22,11 @@ Content-Type: application/json
 
 ### Delete user
 DELETE http://localhost:3003/users/ac9addc1-fc99-482a-bdc0-6d9490c05a7c
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJiOWI3ZWU4LWFlNGItNGJkMS05YmQ2LWU3ZTIxNTk0Mzk5YiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY1OTYyMTg3NiwiZXhwIjoxNjU5NzA4Mjc2fQ.GMtyKRjOtkDtoH_OgnVs_sFNaS9yPY2MA1cHiBfb5N8
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJiOWI3ZWU4LWFlNGItNGJkMS05YmQ2LWU3ZTIxNTk0Mzk5YiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY1OTkxNjUzNiwiZXhwIjoxNjYwMDAyOTM2fQ.7PYugQ9s6QWKHoFqlrMrFben4wV0vZ-KcFYocGjbVYk
 
 ### Get all users (protected)
 GET http://localhost:3003/users?search=criz
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJiOWI3ZWU4LWFlNGItNGJkMS05YmQ2LWU3ZTIxNTk0Mzk5YiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY1OTYyMTg3NiwiZXhwIjoxNjU5NzA4Mjc2fQ.GMtyKRjOtkDtoH_OgnVs_sFNaS9yPY2MA1cHiBfb5N8
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJiOWI3ZWU4LWFlNGItNGJkMS05YmQ2LWU3ZTIxNTk0Mzk5YiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY1OTkxNjUzNiwiZXhwIjoxNjYwMDAyOTM2fQ.7PYugQ9s6QWKHoFqlrMrFben4wV0vZ-KcFYocGjbVYk
 
 ### Post new recipes
 POST http://localhost:3003/recipes/created
@@ -51,8 +51,8 @@ Content-Type: application/json
 
 ### Delete Recipe
 DELETE http://localhost:3003/recipes/1659549870047
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJiOWI3ZWU4LWFlNGItNGJkMS05YmQ2LWU3ZTIxNTk0Mzk5YiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY1OTY0NzEzMywiZXhwIjoxNjU5NzMzNTMzfQ.PXGSdx0GUsleAkT5ilHVRJHTVagbkzwytfw8KD5u3bA
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJiOWI3ZWU4LWFlNGItNGJkMS05YmQ2LWU3ZTIxNTk0Mzk5YiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY1OTkxNjUzNiwiZXhwIjoxNjYwMDAyOTM2fQ.7PYugQ9s6QWKHoFqlrMrFben4wV0vZ-KcFYocGjbVYk
 
 ### Get all recipes
 GET http://localhost:3003/recipes?search=Lasanha
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJiOWI3ZWU4LWFlNGItNGJkMS05YmQ2LWU3ZTIxNTk0Mzk5YiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY1OTYyMTg3NiwiZXhwIjoxNjU5NzA4Mjc2fQ.GMtyKRjOtkDtoH_OgnVs_sFNaS9yPY2MA1cHiBfb5N8
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJiOWI3ZWU4LWFlNGItNGJkMS05YmQ2LWU3ZTIxNTk0Mzk5YiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY1OTkxNjUzNiwiZXhwIjoxNjYwMDAyOTM2fQ.7PYugQ9s6QWKHoFqlrMrFben4wV0vZ-KcFYocGjbVYk
