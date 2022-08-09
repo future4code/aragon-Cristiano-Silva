@@ -43,7 +43,7 @@ export class UserDatabase extends BaseDatabase {
         const userDB: IUserDB[] = await BaseDatabase 
         .connection(UserDatabase.TABLE_USERS)
         .select()
-        .where(`name`, "LIKE", `${search}`)
+        .where(`name`, "LIKE", `%${search}%`)
 
         return userDB
 

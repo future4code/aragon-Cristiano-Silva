@@ -163,11 +163,16 @@ export class UserBusiness {
                 user.role
             )
         })
-        const response = {
-            users
-        }
+       
+        const result = users.map((use) =>{
+            return {
+                id: use.getId(),
+                name: use.getName(),
+                email: use.getEmail()
+            }
+        })
 
-        return response
+        return result
 
         }
   
