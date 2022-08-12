@@ -1,0 +1,51 @@
+### Endpoint de teste
+GET http://localhost:3003/ping
+
+### Endpoint of created user
+POST http://localhost:3003/signup
+Content-Type: application/json 
+
+{
+    "nickname": "Cristiano Silva",
+    "email":"criz@gmail.com",
+    "password": "criz2211"
+}
+
+### Endpoint Login
+POST http://localhost:3003/login
+Content-Type: application/json
+
+{
+    "email" : "criz@gmail.com",
+    "password" : "criz2211"
+}
+
+### Endpoint get users
+GET http://localhost:3003/users
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhZTJiM2M2LTE0YWItNGEzOS1iYmQzLThkOGJmZWYzMjc4MCIsImlhdCI6MTY1OTM4MTk2NCwiZXhwIjoxNjU5NDY4MzY0fQ.1dVCc8s83wX3IYCY60kw3ghjeJ24tTnBQLABAEa0Ggs
+Content-Type: application/json
+
+{
+    "email" : "criz@gmail.com",
+    "password" : "criz2211"
+}
+
+### Endpoint update user
+PUT http://localhost:3003/users
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhZTJiM2M2LTE0YWItNGEzOS1iYmQzLThkOGJmZWYzMjc4MCIsImlhdCI6MTY1OTM4MTk2NCwiZXhwIjoxNjU5NDY4MzY0fQ.1dVCc8s83wX3IYCY60kw3ghjeJ24tTnBQLABAEa0Ggs
+Content-Type: application/json
+
+{
+    "nickname": "Cristiano",
+    "email":"criz@outlook.com",
+    "password": "112233criz"
+}
+
+### Endpoint delete user
+DELETE http://localhost:3003/users
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhZTJiM2M2LTE0YWItNGEzOS1iYmQzLThkOGJmZWYzMjc4MCIsImlhdCI6MTY1OTM4MTk2NCwiZXhwIjoxNjU5NDY4MzY0fQ.1dVCc8s83wX3IYCY60kw3ghjeJ24tTnBQLABAEa0Ggs
+Content-Type: application/json
+
+{
+    "id":"7079b8e4-95cd-48aa-82a9-77454e94b789"
+}
