@@ -1,0 +1,39 @@
+### Endpoint de teste
+GET http://localhost:3003/ping
+
+
+### Signup
+POST http://localhost:3003/signup
+Content-Type: application/json
+
+{
+    "nickname": "Fulilin",
+    "email": "fulano@gmail.com",
+    "password": "qwerty00"
+}
+
+### Login
+POST http://localhost:3003/login
+Content-Type: application/json
+
+{
+    "email": "fulano@gmail.com",
+    "password": "qwerty00"
+}
+
+### Get all users (protected)
+GET http://localhost:3003/users?search=
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU0YzRjOGJiLTA0NTctNDNiZS1iY2UwLTc4MGY5OTk3ZDUyYiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY1OTQ3MDE4MywiZXhwIjoxNjU5NTU2NTgzfQ.pXIMH84O3gg4iFOehJJUuFf8QWIp0kXTuuniQwGw9fI
+
+### Edit user (protected)
+PUT http://localhost:3003/users
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU0YzRjOGJiLTA0NTctNDNiZS1iY2UwLTc4MGY5OTk3ZDUyYiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY1OTQ3MDE4MywiZXhwIjoxNjU5NTU2NTgzfQ.pXIMH84O3gg4iFOehJJUuFf8QWIp0kXTuuniQwGw9fI
+Content-Type: application/json
+
+{
+    "nickname": "FunDev1"
+}
+
+### Delete user (protected)
+DELETE http://localhost:3003/users/e4c4c8bb-0457-43be-bce0-780f9997d52b
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU0YzRjOGJiLTA0NTctNDNiZS1iY2UwLTc4MGY5OTk3ZDUyYiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY1OTQ3MDE4MywiZXhwIjoxNjU5NTU2NTgzfQ.pXIMH84O3gg4iFOehJJUuFf8QWIp0kXTuuniQwGw9fI
