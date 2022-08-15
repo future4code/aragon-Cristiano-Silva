@@ -1,6 +1,6 @@
 import { PostDatabase } from './../database/PostDatabase';
 import { ITokenPayload } from './../services/Authenticator';
-import { INewpostDTO,ILikeDB, Post, IPostDB, IGetPostsInputDTO, IGetPostsDBDTO, IGetPostsPost, IGetPostsOutputDTO, IDeletePostInputDTO, INewLikeDTO } from './../models/Post';
+import { INewpostDTO, ILikeDB, Post, IPostDB, IGetPostsInputDTO, IGetPostsDBDTO, IGetPostsPost, IGetPostsOutputDTO, IDeletePostInputDTO, INewLikeDTO, ILikeDBDTO } from './../models/Post';
 import { Authenticator } from "../services/Authenticator"
 import { HashManager } from "../services/HashManager"
 import { IdGenerator } from "../services/IdGenerator"
@@ -96,28 +96,27 @@ export class PostBusiness {
     }
 
     public newlike = async (input: INewLikeDTO) =>{
-        const {token,post_id, user_id} = input
-
-        if(!token ){
-            throw new Error("Parâmetro faltando")
-        }
-
-        if(!post_id ){
-            throw new Error("Parâmetro faltando")
-        }
-        if(!user_id){
-            throw new Error("Parâmetro faltando")
-        }
-
+        const {token,id} = input
+       
         const payload = this.authenticator.getTokenPayload(token)
+        
         if(!payload){
             throw new Error("token invalido");
-            
+        } 
+
+        const searchPost = await this.postDatabase.findById(id)
+
+        if(!searchPost){
+            throw new Error("Post not found");  
         }
 
+       
+
+        const postId = this.idGenerator.generate()
+
         const likeDB: ILikeDB = {
-            id: this.idGenerator.generate(),
-            post_id: post_id,
+            id: postId,
+            post_id: id,
             user_id: payload.id         
         }
 
@@ -125,7 +124,6 @@ export class PostBusiness {
      
         const result = {
             message: "new like successfully",
-            likeDB
         }
         return result
     }
@@ -162,4 +160,49 @@ export class PostBusiness {
 
         return result
     }
+
+    public desLike = async(input: INewLikeDTO) => {
+        const {token, id} = input
+
+        if (!token) {
+            throw new Error("Missing Token");
+        }
+
+        if (!id) {
+            throw new Error("Missing postId");
+        }
+
+        const payload = this.authenticator.getTokenPayload(token);
+
+        if (!payload) {
+            throw new Error("Invalid Token");
+        }
+
+        const postDB = await this.postDatabase.findById(id);
+
+        if (!postDB) {
+            throw new Error("Post not found");
+        }
+
+        const userId = payload.id;
+        const likeDB = await this.postDatabase.findById(id);
+
+        if (!likeDB) {
+            throw new Error("You haven't liked this post");
+        }
+
+        const dislike = {
+            post_id: id,
+            user_id: userId
+        }
+
+        await this.postDatabase.deslikePost(dislike);
+
+        const response = {
+            message: "Post disliked successfully"
+        }
+
+        return response;
+    }
+    
 }

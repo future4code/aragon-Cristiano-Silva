@@ -1,4 +1,4 @@
-import { Post, IPostDB, IGetPostsDBDTO, ILikeDB, INewLikeDTO } from './../models/Post';
+import { Post, IPostDB, IGetPostsDBDTO, ILikeDB, INewLikeDTO, ILikeDBDTO } from './../models/Post';
 import { BaseDatabase } from "./BaseDatabase"
 
 export class PostDatabase extends BaseDatabase {
@@ -12,14 +12,20 @@ export class PostDatabase extends BaseDatabase {
         .insert(postDB)
     }
 
-    public addLike = async(likeDB: ILikeDB) =>{
+    public addLike = async(input: ILikeDB) =>{
+        const newLikeDB: ILikeDB ={
+            id: input.id,
+            post_id: input.post_id,
+            user_id: input.user_id,
+        }
         
         await BaseDatabase
         .connection(PostDatabase.TABLE_LIKES)
-        .insert(likeDB)
-        
+        .insert(newLikeDB) 
         
     }
+
+
 
     public getPosts = async (input: IGetPostsDBDTO) => {
         const search = input.search
@@ -47,6 +53,17 @@ export class PostDatabase extends BaseDatabase {
             .connection(PostDatabase.TABLE_POSTS)
             .delete()
             .where({id})
+    }
+
+    deslikePost = async(deslike:ILikeDBDTO) =>{
+        const deslikeDB: ILikeDBDTO = {
+            post_id:deslike.post_id,
+            user_id:deslike.user_id
+        }
+        await BaseDatabase
+            .connection(PostDatabase.TABLE_LIKES)
+            .where({post_id:deslike.post_id, user_id:deslike.user_id})
+            .delete()
     }
 
 }

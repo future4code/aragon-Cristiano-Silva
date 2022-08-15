@@ -28,12 +28,10 @@ export class PostController {
         try{     
             const input : INewLikeDTO ={
                 token:req.headers.authorization,
-                post_id: req.body.post_id,
-                user_id:req.body.user_id
+                id: req.params.id    
             }
 
             const result = await this.postBusiness.newlike(input)
-
 
             res.status(201).send(result)
         }catch(error){
@@ -71,5 +69,21 @@ export class PostController {
             res.status(400).send({message: error.message});
         }
     }
+
+    public deslikePost = async (req:Request, res: Response) =>{
+        try{
+            const input: INewLikeDTO = {
+                token: req.headers.authorization,
+                id: req.params.id
+        }
+
+        const result = await this.postBusiness.desLike(input)
+
+        res.status(200).send(result)
+    }catch (error) {
+        res.status(400).send({message: error.message});
+    }
+    }
+
 
 }

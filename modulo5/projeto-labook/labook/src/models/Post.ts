@@ -83,7 +83,11 @@ export interface IDeletePostInputDTO{
 
 export interface INewLikeDTO {
     token: string,
-    post_id: string,
-    user_id: string,
+    id: string,
     
+}
+
+export interface ILikeDBDTO {
+    post_id: string;
+    user_id: string;
 }

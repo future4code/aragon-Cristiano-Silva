@@ -6,7 +6,7 @@ POST http://localhost:3003/users/signup
 Content-Type: application/json 
 
 {
-    "name": "Criz",
+    "name": "Criz1",
     "email": "criz2@gmail.com",
     "password": "abc123"
 }
@@ -31,19 +31,16 @@ Content-Type: application/json
 
 ### 4) Get Posts 
 GET http://localhost:3003/posts?search=
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMyMTZjNjhmLWJhMjktNGMxYS05YzRjLTM4NjdjMTNiMDZhMCIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NjAzMTAyNzAsImV4cCI6MTY2MDM5NjY3MH0.3Nd9NAO_WGMLLrMeKHM2YQgTYycJvfwvkgIQHTz1RTc
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwMSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY2MDUyOTE4MywiZXhwIjoxNjYwNjE1NTgzfQ.ODbPGmUMFF23l_HXXc3YS8PkCeS6BkSPe_UOeOaG4H0
 
 ### 5) Delete Posts
 DELETE http://localhost:3003/posts/8f12094d-b386-4fd1-9db1-efa8adfd5489
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwMSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY2MDMxNTY3MSwiZXhwIjoxNjYwNDAyMDcxfQ.4beSBV-occiXcDAT0BqQXt3rnyK1cofSf-cQjehkw_8
 
 ### 6) Like
-POST http://localhost:3003/posts/like
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwMSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY2MDMxNTY3MSwiZXhwIjoxNjYwNDAyMDcxfQ.4beSBV-occiXcDAT0BqQXt3rnyK1cofSf-cQjehkw_8
-Content-Type: application/json 
+POST http://localhost:3003/posts/201
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwMSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY2MDUyOTk1MiwiZXhwIjoxNjYwNjE2MzUyfQ.SrK-C90ZAJs9oDkfGwJueSNI7LRdwIVlCSMel16S3dw
 
-{
-    "post_id" :"201",
-    "user_id" : "101"
-    
-}
+### 7) Delete Like
+DELETE http://localhost:3003/posts/201
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwMSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY2MDUyOTk1MiwiZXhwIjoxNjYwNjE2MzUyfQ.SrK-C90ZAJs9oDkfGwJueSNI7LRdwIVlCSMel16S3dw
