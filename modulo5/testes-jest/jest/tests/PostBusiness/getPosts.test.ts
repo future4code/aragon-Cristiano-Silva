@@ -18,12 +18,15 @@ describe("Testando PostBusiness", () => {
 
     test("getPosts bem sucedido", async () =>{
         const input:IGetPostsInputDTO = {
-            token: "token-mock"
+            token: "token-astrodev"
         }
 
         const result = await postBusiness.getPosts(input)
 
         expect(result.posts.length).toEqual(3)
+        expect(result.posts[0].getId()).toEqual("201")
+        expect(result.posts[0].getContent()).toEqual("Olá, sou novo por aqui!")
+        expect(result.posts[0].getUserId()).toEqual("101")
     })
 
 })

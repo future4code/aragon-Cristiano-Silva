@@ -17,13 +17,16 @@ describe("Testando PostBusiness", () => {
 
     test('createPost bem sucedido', async () =>{
         const input: ICreatePostInputDTO = {
-            token: "token-mock",
+            token: "token-astrodev",
             content: "Topadissimo post"
         }
 
         const response = await postBusiness.createPost(input)
 
-        expect(response.message).toEqual("Post criado com sucesso")        
+        expect(response.message).toEqual("Post criado com sucesso") 
+        expect(response.post.getId()).toEqual("id-mock")
+        expect(response.post.getContent()).toEqual("Topadissimo post") 
+        expect(response.post.getUserId()).toEqual("101")     
     })
 
  
