@@ -14,7 +14,7 @@ export class ShowController {
             const input: ICreateShowInputDTO = {
                 token: req.headers.authorization,
                 band: req.body.band,
-                starts_at: req.body.starts_at
+                starts_at: new Date()
             }
 
             const response = await this.showBusiness.createShow(input)

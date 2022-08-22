@@ -12,6 +12,7 @@ https://documenter.getpostman.com/view/15488606/VUqoReCe
 
 ## Link de acesso Heroku
 
+https://projeto-lama-aragon.herokuapp.com/ping
 
 
 ## Stacks
