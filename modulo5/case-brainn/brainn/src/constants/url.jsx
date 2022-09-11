@@ -1,0 +1,1 @@
+export const BASE_URL = "http://brainn-api-loterias.herokuapp.com/api/v1"
